@@ -62,9 +62,9 @@
                 "requestBody": {
                     "required": true,
                     "content": {
-                        "application/json": {
+                        "multipart/form-data": {
                             "schema": {
-                                "$ref": "#/components/schemas/RegisterUserOwner"
+                                "$ref": "#/components/schemas/RegisterUser"
                             },
                             "examples": {
                                 "user": {
@@ -128,7 +128,7 @@
                                     "$ref": "#/components/schemas/Fail"
                                 },
                                 "examples": {
-                                    "email and password empty": {
+                                    "email, password, userType empty": {
                                         "description": "Register fail because email and password empty",
                                         "value": {
                                             "status": "fail",
@@ -141,6 +141,10 @@
                                                 {
                                                     "field": "password",
                                                     "message": "Password is required"
+                                                },
+                                                {
+                                                    "field": "userType",
+                                                    "message": "User Type is required"
                                                 }
                                             ]
                                         }
@@ -198,7 +202,7 @@
                 "requestBody": {
                     "required": true,
                     "content": {
-                        "application/json": {
+                        "multipart/form-data": {
                             "schema": {
                                 "$ref": "#/components/schemas/LoginUser"
                             },
@@ -238,7 +242,9 @@
                                             "status": "success",
                                             "message": "Login successfully",
                                             "data": {
-                                                "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
+                                                "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+                                                "userId": "b65c17ae-2194-42fe-8501-e51a3e23384a",
+                                                "userType": "user"
                                             }
                                         }
                                     },
@@ -248,7 +254,9 @@
                                             "status": "success",
                                             "message": "Login successfully",
                                             "data": {
-                                                "accessToken": "eyJhbGciOiJIUzM4NCIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWUsImlhdCI6MTUxNjIzOTAyMn0.bQTnz6AuMJvmXXQsVPrxeQNvzDkimo7VNXxHeSBfClLufmCVZRUuyTwJF311JHuh"
+                                                "accessToken": "eyJhbGciOiJIUzM4NCIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWUsImlhdCI6MTUxNjIzOTAyMn0.bQTnz6AuMJvmXXQsVPrxeQNvzDkimo7VNXxHeSBfClLufmCVZRUuyTwJF311JHuh",
+                                                "userId": "62e6dfe3-2337-4b09-ae48-a565c9e716dc",
+                                                "userType": "owner"
                                             }
                                         }
                                     }
@@ -569,7 +577,7 @@
                                                     },
                                                     {
                                                         "id": "62e6dfe3-2337-4b09-ae48-a565c9e716dc",
-                                                        "fullName": "Jane Doe",
+                                                        "fullName": "Bassike",
                                                         "email": "jane.doe@example.com",
                                                         "province": "DKI Jakarta",
                                                         "city": "Jakarta",
@@ -607,7 +615,7 @@
         "/users/{userId}": {
             "get": {
                 "tags": ["Users"],
-                "summary": "Get user data by user id",
+                "summary": "Get user/owner data by user id",
                 "description": "Get user by spesific user id. Requires valid access token",
                 "parameters": [
                     {
@@ -639,7 +647,30 @@
                                                     "district": "Jakarta Utara",
                                                     "postalCode": "13790",
                                                     "phoneNumber": "081210292912",
-                                                    "birthDate": "2003-01-20"
+                                                    "birthDate": "2003-01-20",
+                                                    "userType": "user"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "Owner 1": {
+                                        "description": "Sample owner 1",
+                                        "value": {
+                                            "status": "success",
+                                            "message": "Get owner data by user id",
+                                            "data": {
+                                                "owner": {
+                                                    "id": "62e6dfe3-2337-4b09-ae48-a565c9e716dc",
+                                                    "fullName": "Jane Doe",
+                                                    "email": "jane.doe@example.com",
+                                                    "addressDetail": "Jl. Kenanga 11",
+                                                    "province": "DKI Jakarta",
+                                                    "city": "Jakarta",
+                                                    "district": "Jakarta Selatan",
+                                                    "postalCode": "12740",
+                                                    "phoneNumber": "081234567890",
+                                                    "birthDate": "2002-02-25",
+                                                    "userType": "owner"
                                                 }
                                             }
                                         }
@@ -669,7 +700,7 @@
             },
             "put": {
                 "tags": ["Users"],
-                "summary": "Update user data by user id",
+                "summary": "Update user/owner data by user id",
                 "description": "Update user by spesific user id. Requires valid access token",
                 "parameters": [
                     {
@@ -697,6 +728,20 @@
                                         "phoneNumber": "081210292913",
                                         "birthDate": "2000-04-17"
                                     }
+                                },
+                                "Owner 1": {
+                                    "description": "Sample owner 1",
+                                    "value": {
+                                        "fullName": "Jane Doe Updated",
+                                        "email": "jane.doe@example.com",
+                                        "addressDetail": "Jl. Kenanga 13",
+                                        "province": "DKI Jakarta",
+                                        "city": "Jakarta",
+                                        "district": "Jakarta Selatan",
+                                        "postalCode": "12740",
+                                        "phoneNumber": "081234567200",
+                                        "birthDate": "2002-02-20"
+                                    }
                                 }
                             }
                         }
@@ -720,217 +765,8 @@
                                                 "id": "b65c17ae-2194-42fe-8501-e51a3e23384a"
                                             }
                                         }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Update user data failed, validation error",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Fail"
-                                },
-                                "examples": {
-                                    "fullName and addressDetail empty": {
-                                        "description": "Failed to update user data because full name and address detail empty",
-                                        "value": {
-                                            "status": "fail",
-                                            "message": "Validation error",
-                                            "errors": [
-                                                {
-                                                    "field": "fullName",
-                                                    "message": "Full name is required"
-                                                },
-                                                {
-                                                    "field": "addressDetail",
-                                                    "message": "Address detail is required"
-                                                }
-                                            ]
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/MiddlewareUnauthorizedError"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/MiddlewareForbiddenError"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/ErrorUserNotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/InternalServerError"
-                    }
-                },
-                "security": [
-                    {
-                        "bearerAuth": []
-                    }
-                ]
-            },
-            "delete": {
-                "tags": ["Users"],
-                "summary": "Delete user data by user id",
-                "description": "Delete user by spesific user id. Requires valid access token",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/UserId"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Deleted user data successfully",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/SuccessRegisterUser"
-                                },
-                                "examples": {
-                                    "User 1": {
-                                        "description": "Sample user 1",
-                                        "value": {
-                                            "status": "success",
-                                            "message": "deleted user data by id",
-                                            "data": {
-                                                "id": "b65c17ae-2194-42fe-8501-e51a3e23384a"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/MiddlewareUnauthorizedError"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/MiddlewareForbiddenError"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/ErrorUserNotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/InternalServerError"
-                    }
-                },
-                "security": [
-                    {
-                        "bearerAuth": []
-                    }
-                ]
-            }
-        },
-        "/users/{ownerId}": {
-            "get": {
-                "tags": ["Users"],
-                "summary": "Get user data by owner id",
-                "description": "Get user by spesific owner id. Requires valid access token",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/OwnerId"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Retrieve owner data successfully",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/SuccessGetUserId"
-                                },
-                                "examples": {
+                                    },
                                     "Owner 1": {
-                                        "description": "Sample owner 1",
-                                        "value": {
-                                            "status": "success",
-                                            "message": "Get owner data by id",
-                                            "data": {
-                                                "owner": {
-                                                    "id": "62e6dfe3-2337-4b09-ae48-a565c9e716dc",
-                                                    "fullName": "Jane Doe",
-                                                    "email": "jane.doe@example.com",
-                                                    "province": "DKI Jakarta",
-                                                    "city": "Jakarta",
-                                                    "district": "Jakarta Selatan",
-                                                    "postalCode": "12740",
-                                                    "phoneNumber": "081234567890",
-                                                    "birthDate": "2002-02-25"
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/MiddlewareUnauthorizedError"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/MiddlewareForbiddenError"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/ErrorOwnerNotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/InternalServerError"
-                    }
-                },
-                "security": [
-                    {
-                        "bearerAuth": []
-                    }
-                ]
-            },
-            "put": {
-                "tags": ["Users"],
-                "summary": "Update user data by owner id",
-                "description": "Update user by spesific owner id. Requires valid access token",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/OwnerId"
-                    }
-                ],
-                "requestBody": {
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/UpdateUserId"
-                            },
-                            "examples": {
-                                "Owner 1": {
-                                    "description": "Sample owner 1",
-                                    "value": {
-                                        "fullName": "Jane Doe Updated",
-                                        "email": "jane.doe.updated@example.com",
-                                        "province": "DKI Jakarta",
-                                        "city": "Jakarta",
-                                        "district": "Jakarta Utara",
-                                        "postalCode": "13790",
-                                        "phoneNumber": "081234568120",
-                                        "birthDate": "2001-04-20"
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "200": {
-                        "description": "Owner data updated successfully",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/SuccessUpdateUserId"
-                                },
-                                "examples": {
-                                    "User 1": {
                                         "description": "Sample owner 1",
                                         "value": {
                                             "status": "success",
@@ -980,7 +816,7 @@
                         "$ref": "#/components/responses/MiddlewareForbiddenError"
                     },
                     "404": {
-                        "$ref": "#/components/responses/ErrorOwnerNotFound"
+                        "$ref": "#/components/responses/ErrorUserNotFound"
                     },
                     "500": {
                         "$ref": "#/components/responses/InternalServerError"
@@ -994,22 +830,32 @@
             },
             "delete": {
                 "tags": ["Users"],
-                "summary": "Delete owner data by owner id",
-                "description": "Delete user by spesific owner id. Requires valid access token",
+                "summary": "Delete user/owner data by user id",
+                "description": "Delete user by spesific user id. Requires valid access token",
                 "parameters": [
                     {
-                        "$ref": "#/components/parameters/OwnerId"
+                        "$ref": "#/components/parameters/UserId"
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "Deleted owner data successfully",
+                        "description": "Deleted user data successfully",
                         "content": {
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/SuccessRegisterUser"
                                 },
                                 "examples": {
+                                    "User 1": {
+                                        "description": "Sample user 1",
+                                        "value": {
+                                            "status": "success",
+                                            "message": "deleted user data by id",
+                                            "data": {
+                                                "id": "b65c17ae-2194-42fe-8501-e51a3e23384a"
+                                            }
+                                        }
+                                    },
                                     "Owner 1": {
                                         "description": "Sample owner 1",
                                         "value": {
@@ -1031,7 +877,7 @@
                         "$ref": "#/components/responses/MiddlewareForbiddenError"
                     },
                     "404": {
-                        "$ref": "#/components/responses/ErrorOwnerNotFound"
+                        "$ref": "#/components/responses/ErrorUserNotFound"
                     },
                     "500": {
                         "$ref": "#/components/responses/InternalServerError"
@@ -1089,31 +935,31 @@
                                                 "products": [
                                                     {
                                                         "id": "86b0a4b1-4d58-44e2-bffa-2a9fd659ce66",
-                                                        "name": "Red Dress",
+                                                        "productName": "Red Dress",
                                                         "ownerName": "Bassike",
-                                                        "imgProduct": "https://example.com/red-dress.jpg",
+                                                        "imgProduct": ["https://pc-ap.rtrcdn.com/productimages/front/1080x/3a/BSSK7.jpg?auto=webp", "https://pc-ap.rtrcdn.com/productimages/back/1080x/3a/BSSK7.jpg?auto=webp"],
                                                         "description": "Red Dress for party",
                                                         "styleNotes": "Utilitarian pockets add a trendy touch to these tie-waist trouser shorts frombassike topped with a stylish paperbag waist.",
                                                         "retailPrice": 3000000,
                                                         "rentPrice": 200000,
                                                         "available": true,
                                                         "color": "Red",
-                                                        "ownerId": "62e6dfe3-2337-4b09-ae48-a565c9e716dc",
-                                                        "categoryId": "d44fd310-0fd4-422e-b77f-026abdd131f8"
+                                                        "categoryId": "d44fd310-0fd4-422e-b77f-026abdd131f8",
+                                                        "userId": "62e6dfe3-2337-4b09-ae48-a565c9e716dc"
                                                     },
                                                     {
                                                         "id": "57826a0c-c803-4d79-8707-5e8174c6eba3",
-                                                        "name": "Pink Dress",
+                                                        "productName": "Pink Dress",
                                                         "ownerName": "Bassike",
-                                                        "imgProduct": "https://example.com/pink-dress.jpg",
+                                                        "imgProduct": ["https://pc-ap.rtrcdn.com/productimages/front/1080x/da/SMY99.jpg?auto=webp", "https://pc-ap.rtrcdn.com/productimages/back/1080x/da/SMY99.jpg?auto=webp"],
                                                         "description": "Pink Dress for party",
                                                         "styleNotes": "Rainbow tie-dye brightens the laid-back appeal of these lounge-ready shorts from Show Me Your Mumu.MatchingSweatshirtalso available.",
                                                         "retailPrice": 2500000,
                                                         "rentPrice": 150000,
                                                         "available": false,
                                                         "color": "Pink",
-                                                        "ownerId": "62e6dfe3-2337-4b09-ae48-a565c9e716dc",
-                                                        "categoryId": "d44fd310-0fd4-422e-b77f-026abdd131f8"
+                                                        "categoryId": "d44fd310-0fd4-422e-b77f-026abdd131f8",
+                                                        "userId": "62e6dfe3-2337-4b09-ae48-a565c9e716dc"
                                                     }
                                                 ]
                                             }
@@ -1154,33 +1000,33 @@
                                 "Product 1": {
                                     "description": "Example for Add Product",
                                     "value": {
-                                        "name": "Red Dress",
+                                        "productName": "Red Dress",
                                         "ownerName": "Bassike",
-                                        "imgProduct": "https://example.com/red-dress.jpg",
+                                        "imgProduct": ["https://pc-ap.rtrcdn.com/productimages/front/1080x/3a/BSSK7.jpg?auto=webp", "https://pc-ap.rtrcdn.com/productimages/back/1080x/3a/BSSK7.jpg?auto=webp"],
                                         "description": "Red Dress for party",
                                         "styleNotes": "Utilitarian pockets add a trendy touch to these tie-waist trouser shorts frombassike topped with a stylish paperbag waist.",
                                         "retailPrice": 3000000,
                                         "rentPrice": 200000,
                                         "available": true,
                                         "color": "Red",
-                                        "ownerId": "62e6dfe3-2337-4b09-ae48-a565c9e716dc",
-                                        "categoryId": "d44fd310-0fd4-422e-b77f-026abdd131f8"
+                                        "categoryId": "d44fd310-0fd4-422e-b77f-026abdd131f8",
+                                        "userId": "62e6dfe3-2337-4b09-ae48-a565c9e716dc"
                                     }
                                 },
                                 "Product 2": {
                                     "description": "Example for Add Product",
                                     "value": {
-                                        "name": "Pink Dress",
+                                        "productName": "Pink Dress",
                                         "ownerName": "Bassike",
-                                        "imgProduct": "https://example.com/pink-dress.jpg",
+                                        "imgProduct": ["https://pc-ap.rtrcdn.com/productimages/front/1080x/da/SMY99.jpg?auto=webp", "https://pc-ap.rtrcdn.com/productimages/back/1080x/da/SMY99.jpg?auto=webp"],
                                         "description": "Pink Dress for party",
                                         "styleNotes": "Rainbow tie-dye brightens the laid-back appeal of these lounge-ready shorts from Show Me Your Mumu.MatchingSweatshirtalso available.",
                                         "retailPrice": 2500000,
                                         "rentPrice": 150000,
                                         "available": true,
                                         "color": "Pink",
-                                        "ownerId": "62e6dfe3-2337-4b09-ae48-a565c9e716dc",
-                                        "categoryId": "d44fd310-0fd4-422e-b77f-026abdd131f8"
+                                        "categoryId": "d44fd310-0fd4-422e-b77f-026abdd131f8",
+                                        "userId": "62e6dfe3-2337-4b09-ae48-a565c9e716dc"
                                     }
                                 }
                             }
@@ -1228,15 +1074,15 @@
                                     "$ref": "#/components/schemas/Fail"
                                 },
                                 "examples": {
-                                    "name, description, rent price, stock, size and color empty": {
-                                        "description": "Fail to add product because name, image product, description, rent price, stock, size and color empty",
+                                    "productName, ownerName, imgProduct, description, styleNotes, retailPrice, rentPrice, available, color, categoryId, userId empty": {
+                                        "description": "Fail to add product because productName, ownerNmae imgProduct, description, styleNotes, retailPrice, rentPrice, available, color, categoryId, userId empty",
                                         "value": {
                                             "status": "fail",
                                             "message": "name, image product, description, rent price, stock, size and color can't be empty",
                                             "errors": [
                                                 {
-                                                    "field": "name",
-                                                    "message": "name is required"
+                                                    "field": "productName",
+                                                    "message": "productName is required"
                                                 },
                                                 {
                                                     "field": "ownerName",
@@ -1269,6 +1115,10 @@
                                                 {
                                                     "field": "categoryId",
                                                     "message": "category is required"
+                                                },
+                                                {
+                                                    "field": "userId",
+                                                    "message": "userId is required"
                                                 }
                                             ]
                                         }
@@ -1350,7 +1200,7 @@
                                             "data": {
                                                 "category": {
                                                     "id": "d44fd310-0fd4-422e-b77f-026abdd131f8",
-                                                    "name": "Dresses"
+                                                    "categoriesName": "Dresses"
                                                 }
                                             }
                                         }
@@ -1363,7 +1213,7 @@
                                             "data": {
                                                 "category": {
                                                     "id": "1d406a46-5ebf-4c1f-b270-06759cf6e3fa",
-                                                    "name": "Accessories"
+                                                    "categoriesName": "Accessories"
                                                 }
                                             }
                                         }
@@ -1392,19 +1242,19 @@
                 ]
             }
         },
-        "/products/{ownerId}": {
+        "/products/{userId}/owner": {
             "get": {
                 "tags": ["Products"],
-                "summary": "Get product by owner id",
-                "description": "Get product by spesific owner id",
+                "summary": "Get product owner by user id. For user",
+                "description": "Get product in owner catalog by spesific user id",
                 "parameters": [
                     {
-                        "$ref": "#/components/parameters/OwnerId"
+                        "$ref": "#/components/parameters/UserId"
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "Retrieved product data by owner successfully",
+                        "description": "Retrieved product data owner successfully",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1415,10 +1265,11 @@
                                         "description": "Sample owner 1",
                                         "value": {
                                             "status": "success",
-                                            "message": "Get category by id",
+                                            "message": "Get product by id",
                                             "data": {
                                                 "product": {
-                                                    "id": "62e6dfe3-2337-4b09-ae48-a565c9e716dc",
+                                                    "userid": "62e6dfe3-2337-4b09-ae48-a565c9e716dc",
+                                                    "userType": "owner",
                                                     "productId": ["86b0a4b1-4d58-44e2-bffa-2a9fd659ce66", "57826a0c-c803-4d79-8707-5e8174c6eba3"]
                                                 }
                                             }
@@ -1452,7 +1303,7 @@
             "get": {
                 "tags": ["Products"],
                 "summary": "Get product by product id",
-                "description": "Get product by spesific product id",
+                "description": "Get product by spesific product id, for user see one product detail.",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/ProductId"
@@ -1475,15 +1326,17 @@
                                             "data": {
                                                 "product": {
                                                     "id": "86b0a4b1-4d58-44e2-bffa-2a9fd659ce66",
-                                                    "name": "Red Dress",
-                                                    "imgProduct": "https://example.com/red-dress.jpg",
+                                                    "productName": "Red Dress",
+                                                    "ownerName": "Bassike",
+                                                    "imgProduct": ["https://pc-ap.rtrcdn.com/productimages/front/1080x/3a/BSSK7.jpg?auto=webp", "https://pc-ap.rtrcdn.com/productimages/back/1080x/3a/BSSK7.jpg?auto=webp"],
                                                     "description": "Red Dress for party",
+                                                    "styleNotes": "Utilitarian pockets add a trendy touch to these tie-waist trouser shorts frombassike topped with a stylish paperbag waist.",
                                                     "retailPrice": 3000000,
                                                     "rentPrice": 200000,
                                                     "available": true,
                                                     "color": "Red",
-                                                    "ownerId": "62e6dfe3-2337-4b09-ae48-a565c9e716dc",
-                                                    "categoryId": "d44fd310-0fd4-422e-b77f-026abdd131f8"
+                                                    "categoryId": "d44fd310-0fd4-422e-b77f-026abdd131f8",
+                                                    "userId": "62e6dfe3-2337-4b09-ae48-a565c9e716dc"
                                                 }
                                             }
                                         }
@@ -1496,15 +1349,17 @@
                                             "data": {
                                                 "category": {
                                                     "id": "57826a0c-c803-4d79-8707-5e8174c6eba3",
-                                                    "name": "Pink Dress",
-                                                    "imgProduct": "https://example.com/pink-dress.jpg",
+                                                    "productName": "Pink Dress",
+                                                    "ownerName": "Bassike",
+                                                    "imgProduct": ["https://pc-ap.rtrcdn.com/productimages/front/1080x/da/SMY99.jpg?auto=webp", "https://pc-ap.rtrcdn.com/productimages/back/1080x/da/SMY99.jpg?auto=webp"],
                                                     "description": "Pink Dress for party",
+                                                    "styleNotes": "Rainbow tie-dye brightens the laid-back appeal of these lounge-ready shorts from Show Me Your Mumu.MatchingSweatshirtalso available.",
                                                     "retailPrice": 2500000,
                                                     "rentPrice": 150000,
                                                     "available": true,
                                                     "color": "Pink",
-                                                    "ownerId": "62e6dfe3-2337-4b09-ae48-a565c9e716dc",
-                                                    "categoryId": "d44fd310-0fd4-422e-b77f-026abdd131f8"
+                                                    "categoryId": "d44fd310-0fd4-422e-b77f-026abdd131f8",
+                                                    "userId": "62e6dfe3-2337-4b09-ae48-a565c9e716dc"
                                                 }
                                             }
                                         }
@@ -1552,28 +1407,28 @@
                                 "Product 1": {
                                     "description": "Sample product 1",
                                     "value": {
-                                        "name": "Red Dress Updated",
-                                        "imgProduct": "https://example.com/red-dress-updated.jpg",
+                                        "productName": "Red Dress Updated",
+                                        "imgProduct": ["https://pc-ap.rtrcdn.com/productimages/front/1080x/3a/BSSK7.jpg?auto=webp", "https://pc-ap.rtrcdn.com/productimages/back/1080x/3a/BSSK7.jpg?auto=webp"],
                                         "description": "Red Dress for party updated",
-                                        "retailPrice": 3500000,
-                                        "rentPrice": 250000,
+                                        "styleNotes": "Utilitarian pockets add a trendy touch to these tie-waist trouser shorts frombassike topped with a stylish paperbag waist.",
+                                        "retailPrice": 2500000,
+                                        "rentPrice": 150000,
                                         "available": true,
                                         "color": "Red",
-                                        "ownerId": "62e6dfe3-2337-4b09-ae48-a565c9e716dc",
                                         "categoryId": "d44fd310-0fd4-422e-b77f-026abdd131f8"
                                     }
                                 },
                                 "Product 2": {
                                     "description": "Sample product 2",
                                     "value": {
-                                        "name": "Pink Dress Updated",
-                                        "imgProduct": "https://example.com/pink-dress-updated.jpg",
+                                        "productName": "Pink Dress Updated",
+                                        "imgProduct": ["https://pc-ap.rtrcdn.com/productimages/front/1080x/da/SMY99.jpg?auto=webp", "https://pc-ap.rtrcdn.com/productimages/back/1080x/da/SMY99.jpg?auto=webp"],
                                         "description": "Pink Dress for party updated",
+                                        "styleNotes": "Rainbow tie-dye brightens the laid-back appeal of these lounge-ready shorts from Show Me Your Mumu.MatchingSweatshirtalso available.",
                                         "retailPrice": 3000000,
                                         "rentPrice": 200000,
                                         "available": true,
                                         "color": "Pink",
-                                        "ownerId": "62e6dfe3-2337-4b09-ae48-a565c9e716dc",
                                         "categoryId": "d44fd310-0fd4-422e-b77f-026abdd131f8"
                                     }
                                 }
@@ -1622,14 +1477,14 @@
                                     "$ref": "#/components/schemas/Fail"
                                 },
                                 "examples": {
-                                    "name, imgProduct, description, retailPrice, rentPrice, stock, size, color, categoryId empty": {
-                                        "description": "Failed to update product data because name, imgProduct, description, retailPrice, rentPrice, stock, size, color, categoryId empty",
+                                    "productName, imgProduct, description, styleNotes, retailPrice, rentPrice, available, color, categoryId empty": {
+                                        "description": "Failed to update product data because productName, imgProduct, description, styleNotes, retailPrice, rentPrice, available, color, categoryId empty",
                                         "value": {
                                             "status": "fail",
                                             "message": "Validation error",
                                             "errors": [
                                                 {
-                                                    "field": "name",
+                                                    "field": "productName",
                                                     "message": "Product name is required"
                                                 },
                                                 {
@@ -1639,6 +1494,10 @@
                                                 {
                                                     "field": "description",
                                                     "message": "Description is required"
+                                                },
+                                                {
+                                                    "field": "styleNotes",
+                                                    "message": "Style notes is required"
                                                 },
                                                 {
                                                     "field": "retailPrice",
@@ -1875,38 +1734,14 @@
                                                 "cart": {
                                                     "id": "0fcf65ac-fe74-4eca-9d18-07f84674efc1",
                                                     "userId": "b65c17ae-2194-42fe-8501-e51a3e23384a",
-                                                    "productId": "86b0a4b1-4d58-44e2-bffa-2a9fd659ce66",
+                                                    "productId": ["86b0a4b1-4d58-44e2-bffa-2a9fd659ce66","57826a0c-c803-4d79-8707-5e8174c6eba3"],
                                                     "rentalStartDate": "2024-06-04",
                                                     "rentalEndDate": "2024-06-08",
                                                     "rentalTime": 4,
                                                     "delivery": "J&T Express",
                                                     "deliveryPrice": 20000,
                                                     "paymentDate": "2024-05-31T13:20:20Z",
-                                                    "amount": 220000,
-                                                    "cardNumber": "4484 9606 0904 6166",
-                                                    "cardExpiry": "07/28",
-                                                    "cardCVV": "756"
-                                                }
-                                            }
-                                        }
-                                    },
-                                    "Cart 2": {
-                                        "description": "Sample cart 2",
-                                        "value": {
-                                            "status": "success",
-                                            "message": "Get cart by id",
-                                            "data": {
-                                                "cart": {
-                                                    "id": "b1dffa77-3719-4d8c-8c97-30d1ad14004d",
-                                                    "userId": "b65c17ae-2194-42fe-8501-e51a3e23384a",
-                                                    "productId": "57826a0c-c803-4d79-8707-5e8174c6eba3",
-                                                    "rentalStartDate": "2024-06-04",
-                                                    "rentalEndDate": "2024-06-08",
-                                                    "rentalTime": 4,
-                                                    "delivery": "J&T Express",
-                                                    "deliveryPrice": 20000,
-                                                    "paymentDate": "2024-05-31T13:20:20Z",
-                                                    "amount": 170000,
+                                                    "amount": 440000,
                                                     "cardNumber": "4484 9606 0904 6166",
                                                     "cardExpiry": "07/28",
                                                     "cardCVV": "756"
@@ -1925,7 +1760,7 @@
                         "$ref": "#/components/responses/MiddlewareForbiddenError"
                     },
                     "404": {
-                        "$ref": "#/components/responses/ErrorCategoryNotFound"
+                        "$ref": "#/components/responses/ErrorCartNotFound"
                     },
                     "500": {
                         "$ref": "#/components/responses/InternalServerError"
@@ -1936,6 +1771,129 @@
                         "bearerAuth": []
                     }
                 ]
+            },
+            "put": {
+                "tags": ["carts"],
+                "summary": "Update product cart by user id",
+                "description": "Update product cart by spesific user id. User only",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/UserId"
+                    }  
+                ],
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateCart"
+                            },
+                            "examples": {
+                                "Cart 1": {
+                                    "description": "Update cart 1",
+                                    "value": {
+                                        "rentalStartDate": "2024-06-03",
+                                        "rentalEndDate": "2024-06-07",
+                                        "rentalTime": 4,
+                                        "delivery": "J&T Express",
+                                        "paymentDate": "2024-05-30T13:20:20Z",
+                                        "cardNumber": "4567 7746 4844 1563",
+                                        "cardExpiry": "09/28",
+                                        "cardCVV": "595"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Update product cart successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SuccessRegisterUser"
+                                },
+                                "examples": {
+                                    "Cart 1": {
+                                        "description": "Success to update product cart",
+                                        "value": {
+                                            "status": "success",
+                                            "message": "Product cart updated successfully",
+                                            "data": {
+                                                "id": "0fcf65ac-fe74-4eca-9d18-07f84674efc1"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Update product cart failed, validation error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Fail"
+                                },
+                                "examples": {
+                                    "rentalStartDate, rentalEndDate, rentalTime, delivery, paymentDate, cardNumber, cardExpiry, cardCVV empty": {
+                                        "description": "Failed to update product cart because rentalStartDate, rentalEndDate, rentalTime, delivery, paymentDate, cardNumber, cardExpiry, cardCVV empty",
+                                        "value": {
+                                            "status": "fail",
+                                            "message": "Validation error",
+                                            "errors": [
+                                                {
+                                                    "field": "rentalStartDate",
+                                                    "message": "rentalStartDate is required"
+                                                },
+                                                {
+                                                    "field": "rentalEndDate",
+                                                    "message": "rentalEndDate is required"
+                                                },
+                                                {
+                                                    "field": "rentalTime",
+                                                    "message": "rentalTime is required"
+                                                },
+                                                {
+                                                    "field": "delivery",
+                                                    "message": "delivery is required"
+                                                },
+                                                {
+                                                    "field": "paymentDate",
+                                                    "message": "paymentDate is required"
+                                                },
+                                                {
+                                                    "field": "cardNumber",
+                                                    "message": "cardNumber is required"
+                                                },
+                                                {
+                                                    "field": "cardExpiry",
+                                                    "message": "cardExpiry is required"
+                                                },
+                                                {
+                                                    "field": "cardCVV",
+                                                    "message": "cardCVV is required"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/MiddlewareUnauthorizedError"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/MiddlewareForbiddenError"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/ErrorCartNotFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/InternalServerError"
+                    }
+                }
             }
         },
         "/carts/{userId}/{productId}": {
@@ -1963,18 +1921,7 @@
                                     "description": "Add sample cart 1",
                                     "value": {
                                         "userId": "b65c17ae-2194-42fe-8501-e51a3e23384a",
-                                        "productId": "86b0a4b1-4d58-44e2-bffa-2a9fd659ce66",
-                                        "size": "L",
-                                        "color": "Red"
-                                    }
-                                },
-                                "Cart 2": {
-                                    "description": "Add sample cart 2",
-                                    "value": {
-                                        "userId": "b65c17ae-2194-42fe-8501-e51a3e23384a",
-                                        "productId": "57826a0c-c803-4d79-8707-5e8174c6eba3",
-                                        "size": "M",
-                                        "color": "Pink"
+                                        "productId": ["86b0a4b1-4d58-44e2-bffa-2a9fd659ce66", "57826a0c-c803-4d79-8707-5e8174c6eba3"]
                                     }
                                 }
                             }
@@ -1997,16 +1944,6 @@
                                             "message": "Product add to cart successfully",
                                             "data": {
                                                 "id": "0fcf65ac-fe74-4eca-9d18-07f84674efc1"
-                                            }
-                                        }
-                                    },
-                                    "Cart 2": {
-                                        "description": "Success to add product to cart",
-                                        "value": {
-                                            "status": "success",
-                                            "message": "Product add to cart successfully",
-                                            "data": {
-                                                "id": "b1dffa77-3719-4d8c-8c97-30d1ad14004d"
                                             }
                                         }
                                     }
@@ -2051,7 +1988,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/SuccessRegisterUser"
+                                    "$ref": "#/components/schemas/SuccessDeleteProductCart"
                                 },
                                 "examples": {
                                     "Cart 1": {
@@ -2060,17 +1997,8 @@
                                             "status": "success",
                                             "message": "deleted product 1 from cart successfully",
                                             "data": {
-                                                "id": "0fcf65ac-fe74-4eca-9d18-07f84674efc1"
-                                            }
-                                        }
-                                    },
-                                    "Cart 2": {
-                                        "description": "Sample cart 2",
-                                        "value": {
-                                            "status": "success",
-                                            "message": "deleted product 2 from cart successfully",
-                                            "data": {
-                                                "id": "b1dffa77-3719-4d8c-8c97-30d1ad14004d"
+                                                "id": "0fcf65ac-fe74-4eca-9d18-07f84674efc1",
+                                                "productId": "86b0a4b1-4d58-44e2-bffa-2a9fd659ce66"
                                             }
                                         }
                                     }
@@ -2101,8 +2029,8 @@
         "/rents/{userId}": {
             "get": {
                 "tags": ["Rents"],
-                "summary": "Get all rents by user id",
-                "description": "Get all rents by spesific user id. User only",
+                "summary": "Get all rents by user id,",
+                "description": "Get all rents by spesific user id. For user and owner",
                 "parameters": [
                     {
                         "$ref": "#/components/parameters/UserId"
@@ -2121,26 +2049,13 @@
                                         "description": "Sample rent 1",
                                         "value": {
                                             "status": "success",
-                                            "message": "Get rent by id",
+                                            "message": "Get rent by user id",
                                             "data": {
                                                 "rent": {
                                                     "cartId": "0fcf65ac-fe74-4eca-9d18-07f84674efc1",
                                                     "userId": "b65c17ae-2194-42fe-8501-e51a3e23384a",
+                                                    "userType": "user",
                                                     "status": "In Progress"
-                                                }
-                                            }
-                                        }
-                                    },
-                                    "Rent 2": {
-                                        "description": "Sample rent 2",
-                                        "value": {
-                                            "status": "success",
-                                            "message": "Get rent by id",
-                                            "data": {
-                                                "rent": {
-                                                    "cartId": "b1dffa77-3719-4d8c-8c97-30d1ad14004d",
-                                                    "userId": "b65c17ae-2194-42fe-8501-e51a3e23384a",
-                                                    "status": "Completed"
                                                 }
                                             }
                                         }
@@ -2156,78 +2071,7 @@
                         "$ref": "#/components/responses/MiddlewareForbiddenError"
                     },
                     "404": {
-                        "$ref": "#/components/responses/ErrorRentNotFound"
-                    },
-                    "500": {
-                        "$ref": "#/components/responses/InternalServerError"
-                    }
-                },
-                "security": [
-                    {
-                        "bearerAuth": []
-                    }
-                ]
-            }
-        },
-        "/rents/{ownerId}": {
-            "get": {
-                "tags": ["Rents"],
-                "summary": "Get all rents by owner id",
-                "description": "Get all rents by spesific owner id. Owner only",
-                "parameters": [
-                    {
-                        "$ref": "#/components/parameters/OwnerId"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Retrieved rent data by id owner successfully",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/SuccessGetRentOwnerId"
-                                },
-                                "examples": {
-                                    "Rent 1": {
-                                        "description": "Sample rent 1",
-                                        "value": {
-                                            "status": "success",
-                                            "message": "Get rent by id",
-                                            "data": {
-                                                "rent": {
-                                                    "cartId": "0fcf65ac-fe74-4eca-9d18-07f84674efc1",
-                                                    "ownerId": "62e6dfe3-2337-4b09-ae48-a565c9e716dc",
-                                                    "status": "In Progress"
-                                                }
-                                            }
-                                        }
-                                    },
-                                    "Rent 2": {
-                                        "description": "Sample rent 2",
-                                        "value": {
-                                            "status": "success",
-                                            "message": "Get rent by id",
-                                            "data": {
-                                                "rent": {
-                                                    "cartId": "b1dffa77-3719-4d8c-8c97-30d1ad14004d",
-                                                    "ownerId": "62e6dfe3-2337-4b09-ae48-a565c9e716dc",
-                                                    "status": "Completed"
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/MiddlewareUnauthorizedError"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/MiddlewareForbiddenError"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/ErrorRentNotFound"
+                        "$ref": "#/components/responses/ErrorCartNotFound"
                     },
                     "500": {
                         "$ref": "#/components/responses/InternalServerError"
@@ -2259,27 +2103,14 @@
                                     "$ref": "#/components/schemas/SuccessGetWishlists"
                                 },
                                 "examples": {
-                                    "Wishlist 1": {
+                                    "Wishlists": {
                                         "description": "Sample wishlist 1",
                                         "value": {
                                             "status": "success",
                                             "message": "Get wishlist data by user id",
                                             "data": {
-                                                "id": "8560f2c0-c303-45a5-9111-09d1af0602dd",
                                                 "userId": "b65c17ae-2194-42fe-8501-e51a3e23384a",
-                                                "productId": "86b0a4b1-4d58-44e2-bffa-2a9fd659ce66"
-                                            }
-                                        }
-                                    },
-                                    "Wishlist 2": {
-                                        "description": "Sample wishlist 2",
-                                        "value": {
-                                            "status": "success",
-                                            "message": "Get wishlist data by user id",
-                                            "data": {
-                                                "id": "c8f2975a-a19d-43ce-82db-89a213e0857e",
-                                                "userId": "b65c17ae-2194-42fe-8501-e51a3e23384a",
-                                                "productId": "57826a0c-c803-4d79-8707-5e8174c6eba3"
+                                                "productId": ["86b0a4b1-4d58-44e2-bffa-2a9fd659ce66", "57826a0c-c803-4d79-8707-5e8174c6eba3"]
                                             }
                                         }
                                     }
@@ -2352,27 +2183,14 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/SuccessRegisterUser"
+                                    "$ref": "#/components/schemas/Success"
                                 },
                                 "examples": {
-                                    "Wishlist 1": {
+                                    "Wishlist": {
                                         "description": "Success to add product to wishlist",
                                         "value": {
                                             "status": "success",
-                                            "message": "Product add to wishlist successfully",
-                                            "data": {
-                                                "id": "8560f2c0-c303-45a5-9111-09d1af0602dd"
-                                            }
-                                        }
-                                    },
-                                    "Wishlist 2": {
-                                        "description": "Success to add product to wishlist",
-                                        "value": {
-                                            "status": "success",
-                                            "message": "Product add to wishlist successfully",
-                                            "data": {
-                                                "id": "c8f2975a-a19d-43ce-82db-89a213e0857e"
-                                            }
+                                            "message": "Product add to wishlist successfully"
                                         }
                                     }
                                 }
@@ -2416,27 +2234,14 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/SuccessRegisterUser"
+                                    "$ref": "#/components/schemas/Success"
                                 },
                                 "examples": {
-                                    "Wishlist 1": {
-                                        "description": "Sample wishlist 1",
+                                    "Wishlist": {
+                                        "description": "Success to delete product from wishlist",
                                         "value": {
                                             "status": "success",
-                                            "message": "deleted product 1 from wishlist successfully",
-                                            "data": {
-                                                "id": "8560f2c0-c303-45a5-9111-09d1af0602dd"
-                                            }
-                                        }
-                                    },
-                                    "Wishlist 2": {
-                                        "description": "Sample wishlist 2",
-                                        "value": {
-                                            "status": "success",
-                                            "message": "deleted product 2 from wishlist successfully",
-                                            "data": {
-                                                "id": "c8f2975a-a19d-43ce-82db-89a213e0857e"
-                                            }
+                                            "message": "deleted product from wishlist successfully"
                                         }
                                     }
                                 }
@@ -2482,32 +2287,27 @@
                                     "$ref": "#/components/schemas/SuccessGetReviews"
                                 },
                                 "examples": {
-                                    "Review 1": {
+                                    "Reviews": {
                                         "description": "Sample review 1",
                                         "value": {
                                             "status": "success",
                                             "message": "Get review data by product id",
-                                            "data": {
-                                                "id": "fa268e68-40e0-4acf-83a0-29f5ff152b00",
-                                                "userId": "b65c17ae-2194-42fe-8501-e51a3e23384a",
-                                                "productId": "86b0a4b1-4d58-44e2-bffa-2a9fd659ce66",
-                                                "rating": 5,
-                                                "comment": "Good product, I like it and fit for me."
-                                            }
-                                        }
-                                    },
-                                    "Review 2": {
-                                        "description": "Sample review 2",
-                                        "value": {
-                                            "status": "success",
-                                            "message": "Get wishlist data by user id",
-                                            "data": {
-                                                "id": "eacdc8fa-3375-4178-8dd9-1fd596c387d2",
-                                                "userId": "df9014c8-7dec-41bc-9d10-4190555efd69",
-                                                "productId": "86b0a4b1-4d58-44e2-bffa-2a9fd659ce66",
-                                                "rating": 4,
-                                                "comment": "Delivery is little bit late, but the product is good."
-                                            }
+                                            "data": [
+                                                {
+                                                    "id": "fa268e68-40e0-4acf-83a0-29f5ff152b00",
+                                                    "userId": "b65c17ae-2194-42fe-8501-e51a3e23384a",
+                                                    "productId": "86b0a4b1-4d58-44e2-bffa-2a9fd659ce66",
+                                                    "rating": 5,
+                                                    "comment": "Good product, I like it and fit for me."
+                                                },
+                                                {
+                                                    "id": "eacdc8fa-3375-4178-8dd9-1fd596c387d2",
+                                                    "userId": "df9014c8-7dec-41bc-9d10-4190555efd69",
+                                                    "productId": "86b0a4b1-4d58-44e2-bffa-2a9fd659ce66",
+                                                    "rating": 4,
+                                                    "comment": "Delivery is little bit late, but the product is good."
+                                                }
+                                            ]
                                         }
                                     }
                                 }
@@ -2716,21 +2516,10 @@
                     "User 1": {
                         "description": "Sample user id for user 1",
                         "value": "b65c17ae-2194-42fe-8501-e51a3e23384a"
-                    }
-                }
-            },
-            "OwnerId": {
-                "name": "ownerId",
-                "in": "path",
-                "description": "Retrieve owner id",
-                "required": true,
-                "schema": {
-                    "type": "string"
-                },
-                "examples": {
+                    },
                     "Owner 1": {
-                        "description": "Sample owner id for owner 1",
-                        "value": "62e6dfe3-2337-4b09-ae48-a565c9e716dc"
+                        "description": "Sample user id for owner 1",
+                        "value" : "62e6dfe3-2337-4b09-ae48-a565c9e716dc"
                     }
                 }
             },
@@ -2848,7 +2637,7 @@
                     }
                 }
             },
-            "RegisterUserOwner": {
+            "RegisterUser": {
                 "type": "object",
                 "properties": {
                     "id": {
@@ -2923,6 +2712,12 @@
                                 "type": "object",
                                 "properties": {
                                     "accessToken": {
+                                        "type": "string"
+                                    },
+                                    "userId": {
+                                        "type": "string"
+                                    },
+                                    "userType": {
                                         "type": "string"
                                     }
                                 }
@@ -3069,14 +2864,18 @@
                     "id": {
                         "type": "string"
                     },
-                    "name": {
+                    "productName": {
                         "type": "string"
                     },
                     "ownerName": {
                         "type": "string"
                     },
                     "imgProduct": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "format": "binary"
+                        }
                     },
                     "description": {
                         "type": "string"
@@ -3099,7 +2898,7 @@
                     "categoryId": {
                         "type": "string"
                     },
-                    "ownerId": {
+                    "userId": {
                         "type": "string"
                     }
                 }
@@ -3107,14 +2906,17 @@
             "AddProduct": {
                 "type": "object",
                 "properties": {
-                    "name": {
+                    "productName": {
                         "type": "string",
                         "required": ["true"]
                     },
                     "imgProduct": {
-                        "type": "string",
-                        "format": "binary",
-                        "required": ["true"]
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "format": "binary",
+                          "required": ["true"]
+                        }
                     },
                     "ownerName": {
                         "type": "string",
@@ -3147,7 +2949,7 @@
                         "type": "string",
                         "required": ["true"]
                     },
-                    "ownerId": {
+                    "userId": {
                         "type": "string"
                     }
                 }
@@ -3198,7 +3000,10 @@
             "ProductOwner": {
                 "type": "object",
                 "properties": {
-                    "id": {
+                    "userId": {
+                        "type": "string"
+                    },
+                    "userType": {
                         "type": "string"
                     },
                     "productId": {
@@ -3232,12 +3037,15 @@
             "UpdateProductId": {
                 "type": "object",
                 "properties": {
-                    "name": {
+                    "productName": {
                         "type": "string"
                     },
                     "imgProduct": {
-                        "type": "string",
-                        "format": "binary"
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "format": "binary"
+                        }
                     },
                     "description": {
                         "type": "string"
@@ -3268,7 +3076,7 @@
                     "id": {
                         "type": "string"
                     },
-                    "name": {
+                    "categoriesName": {
                         "type": "string"
                     }
                 }
@@ -3306,10 +3114,10 @@
                         "type": "string"
                     },
                     "productId": {
-                        "type": "string"
-                    },
-                    "color": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
                     },
                     "rentalStartDate": {
                         "type": "string",
@@ -3369,6 +3177,58 @@
                     }
                 ]
             },
+            "UpdateCart": {
+                "type": "object",
+                "properties": {
+                    "rentalStartDate": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "rentalEndDate": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "rentalTime": {
+                        "type": "integer"
+                    },
+                    "delivery": {
+                        "type": "string"
+                    },
+                    "paymentDate": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "cardNumber": {
+                        "type": "string"
+                    },
+                    "cardExpiry": {
+                        "type": "string"
+                    },
+                    "cardCVV": {
+                        "type": "string"
+                    }
+                }
+            },
+            "SuccessUpdateCartUserId": {
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/Success"
+                    },
+                    {
+                        "type": "object",
+                        "properties": {
+                            "data": {
+                                "type": "object",
+                                "properties": {
+                                    "cart": {
+                                        "$ref": "#/components/schemas/UpdateCart"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ]
+            },
             "AddProductCart": {
                 "type": "object",
                 "properties": {
@@ -3376,13 +3236,35 @@
                         "type": "string"
                     },
                     "productId": {
-                        "type": "string"
-                    },
-                    "color": {
-                        "type": "string",
-                        "required": ["true"]
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
                     }
                 }
+            },
+            "SuccessDeleteProductCart": {
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/Success"
+                    },
+                    {
+                        "type": "object",
+                        "properties": {
+                            "data": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "string"
+                                    },
+                                    "productId": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ]
             },
             "SuccessGetRentUserId": {
                 "allOf": [
@@ -3396,6 +3278,9 @@
                                 "type": "string"
                             },
                             "userId": {
+                                "type": "string"
+                            },
+                            "userType": {
                                 "type": "string"
                             },
                             "status": {
@@ -3429,14 +3314,14 @@
             "AddWishlist": {
                 "type": "object",
                 "properties": {
-                    "id": {
-                        "type": "string"
-                    },
                     "userId": {
                         "type": "string"
                     },
                     "productId": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
                     }
                 }
             },
@@ -3466,9 +3351,6 @@
             "AddReview": {
                 "type": "object",
                 "properties": {
-                    "id": {
-                        "type": "string"
-                    },
                     "userId": {
                         "type": "string"
                     },
@@ -3476,7 +3358,8 @@
                         "type": "string"
                     },
                     "rating": {
-                        "type": "integer"
+                        "type": "integer",
+                        "maximum": 5
                     },
                     "comment": {
                         "type": "string"
@@ -3592,26 +3475,6 @@
                     }
                 }
             },
-            "ErrorOwnerNotFound": {
-                "description": "Owner not found",
-                "content": {
-                    "application/json": {
-                        "schema": {
-                            "type": "object",
-                            "properties": {
-                                "status": {
-                                    "type": "string",
-                                    "example": "fail"
-                                },
-                                "message": {
-                                    "type": "string",
-                                    "example": "Owner not found"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
             "ErrorProductNotFound": {
                 "description": "Product not found",
                 "content": {
@@ -3666,26 +3529,6 @@
                                 "message": {
                                     "type": "string",
                                     "example": "Cart not found"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "ErrorRentNotFound": {
-                "description": "Rent not found",
-                "content": {
-                    "application/json": {
-                        "schema": {
-                            "type": "object",
-                            "properties": {
-                                "status": {
-                                    "type": "string",
-                                    "example": "fail"
-                                },
-                                "message": {
-                                    "type": "string",
-                                    "example": "Rent not found"
                                 }
                             }
                         }
