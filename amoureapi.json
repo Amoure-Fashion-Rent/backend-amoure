@@ -15,7 +15,7 @@
             "description": "Production server"
         },
         {
-            "url": "http://localhost:3000",
+            "url": "http://localhost:8080",
             "description": "Development server"
         }
     ],
@@ -1286,7 +1286,7 @@
                         "$ref": "#/components/responses/MiddlewareForbiddenError"
                     },
                     "404": {
-                        "$ref": "#/components/responses/ErrorOwnerNotFound"
+                        "$ref": "#/components/responses/ErrorUserNotFound"
                     },
                     "500": {
                         "$ref": "#/components/responses/InternalServerError"
@@ -1773,7 +1773,7 @@
                 ]
             },
             "put": {
-                "tags": ["carts"],
+                "tags": ["Carts"],
                 "summary": "Update product cart by user id",
                 "description": "Update product cart by spesific user id. User only",
                 "parameters": [
@@ -3348,6 +3348,30 @@
                     }
                 ]
             },
+            "Reviews": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "userId": {
+                        "type": "string"
+                    },
+                    "productId": {
+                        "type": "string"
+                    },
+                    "rating": {
+                        "type": "integer"
+                    },
+                    "comment": {
+                        "type": "string"
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                }
+            },
             "AddReview": {
                 "type": "object",
                 "properties": {
@@ -3384,7 +3408,7 @@
                                     "reviews": {
                                         "type": "array",
                                         "items": {
-                                            "$ref": "#/components/schemas/AddReview"
+                                            "$ref": "#/components/schemas/Reviews"
                                         }
                                     }
                                 }
@@ -3578,3 +3602,4 @@
         }
     }
 }
+
