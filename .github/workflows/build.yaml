@@ -3,7 +3,6 @@ name: Deploy Backend Amoure to Cloud Run
 on:
   push:
     branches:
-      - "production"
       - "dev"
 
 
