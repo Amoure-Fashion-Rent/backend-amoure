@@ -1,0 +1,6 @@
+node_modules
+dist/
+.idea
+.env
+.env.production
+service-account.json

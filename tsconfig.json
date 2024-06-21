@@ -1,0 +1,47 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "target": "es2021",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "declaration": true,
+    "declarationMap": true,
+    "pretty": true,
+    "sourceMap": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "noImplicitAny": false,
+    "removeComments": true,
+    "outDir": "dist",
+    "noUnusedLocals": true,
+    "importHelpers": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "types": [
+      "node"
+    ],
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["*"],
+      "@config": ["config"],
+      "@controllers/*": ["controllers/*"],
+      "@errors/*": ["errors/*"],
+      "@interfaces/*": ["interfaces/*"],
+      "@middlewares/*": ["middlewares/*"],
+      "@routes/*": ["routes/*"],
+      "@utils/*": ["utils/*"]
+    }
+  },
+  "exclude": [
+    "node_modules",
+  ],
+  "include": ["src/**/*.ts", "src/**/*.json", ".env", "prisma/*.ts", "prisma/seed/seed.ts"],
+}

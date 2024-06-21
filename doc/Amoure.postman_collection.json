@@ -1,0 +1,4054 @@
+{
+	"info": {
+		"_postman_id": "4fcfa06c-e96c-4a46-b7b7-8f01b18c15d9",
+		"name": "Amoure",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31407032"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"fullName\": \"Nyoo\",\r\n  \"email\": \"nyoo@example.com\",\r\n  \"password\": \"i5r%B2#X1A\",\r\n  \"role\": \"USER\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "USER",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"fullName\": \"Nyoo\",\r\n  \"email\": \"nyoo@example.com\",\r\n  \"password\": \"i5r%B2#X1A\",\r\n  \"role\": \"USER\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/register",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "https://editor.swagger.io"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "591"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"24f-Dqg9xpt8ZSbwTvamJcoL2SHvDZQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 16 Jun 2024 11:29:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"OK\",\n    \"data\": {\n        \"user\": {\n            \"id\": 8,\n            \"email\": \"nyoo@example.com\",\n            \"fullName\": \"Nyoo\",\n            \"role\": \"USER\"\n        },\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo4LCJyb2xlIjoiVVNFUiIsImVtYWlsIjoibnlvb0BleGFtcGxlLmNvbSIsImZ1bGxOYW1lIjoiTnlvbyJ9LCJpYXQiOjE3MTg1MzczNjIsImV4cCI6MTcxODU2NjE2Mn0.FOb-UNnPeUBxIllyUTLYjIJOL7qU2abCityurCt08N4\",\n        \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo4LCJyb2xlIjoiVVNFUiIsImVtYWlsIjoibnlvb0BleGFtcGxlLmNvbSIsImZ1bGxOYW1lIjoiTnlvbyJ9LCJpYXQiOjE3MTg1MzczNjIsImV4cCI6MTcxOTE0MjE2Mn0.AR5aY8PPs0HTzzaHtX4D5lql5ezeZcQA3Kl1z_P3o1M\"\n    }\n}"
+						},
+						{
+							"name": "OWNER",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"fullName\": \"Nyoo\",\r\n  \"email\": \"nyooadmin@example.com\",\r\n  \"password\": \"i5r%B2#X1A\",\r\n  \"role\": \"USER\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/register",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "https://editor.swagger.io"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "610"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"262-trjc9NyZwmj9CrVA2YWKnCMIBvE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 16 Jun 2024 11:29:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"OK\",\n    \"data\": {\n        \"user\": {\n            \"id\": 9,\n            \"email\": \"nyooadmin@example.com\",\n            \"fullName\": \"Nyoo\",\n            \"role\": \"USER\"\n        },\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo5LCJyb2xlIjoiVVNFUiIsImVtYWlsIjoibnlvb2FkbWluQGV4YW1wbGUuY29tIiwiZnVsbE5hbWUiOiJOeW9vIn0sImlhdCI6MTcxODUzNzM5MiwiZXhwIjoxNzE4NTY2MTkyfQ.paxuZy-qF2LjNcXVZL4cWrCdaQPk8rcPmFk37W_f-tk\",\n        \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo5LCJyb2xlIjoiVVNFUiIsImVtYWlsIjoibnlvb2FkbWluQGV4YW1wbGUuY29tIiwiZnVsbE5hbWUiOiJOeW9vIn0sImlhdCI6MTcxODUzNzM5MiwiZXhwIjoxNzE5MTQyMTkyfQ.8VXXGrxETU9iBvdVJNpSvpiPrZWrjpIhoS8ECKgWHXM\"\n    }\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"fullName\": \"Nyoo\",\r\n  \"email\": \"nyooadmin@example.com\",\r\n  \"role\": \"USER\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/register",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "https://editor.swagger.io"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "113"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"71-FAO76W/M9BL0yDaokRuzp5rmDPA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 16 Jun 2024 11:30:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Validation Error\",\n    \"errors\": {\n        \"formErrors\": [],\n        \"fieldErrors\": {\n            \"password\": [\n                \"Password cannot be empty\"\n            ]\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"john.doe12@example.com\",\r\n  \"password\": \"i5r%B2#X1A\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SUCCESS",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"john.doe123@example.com\",\r\n  \"password\": \"i5r%B2#X1A\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "https://editor.swagger.io"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "635"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"27b-gaT+bqVOt0XpNKE8FGY9sJdFf2c\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 16 Jun 2024 11:30:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"OK\",\n    \"data\": {\n        \"user\": {\n            \"id\": 1,\n            \"email\": \"john.doe123@example.com\",\n            \"fullName\": \"John Doe\",\n            \"role\": \"OWNER\"\n        },\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJyb2xlIjoiT1dORVIiLCJlbWFpbCI6ImpvaG4uZG9lMTIzQGV4YW1wbGUuY29tIiwiZnVsbE5hbWUiOiJKb2huIERvZSJ9LCJpYXQiOjE3MTg1Mzc0MzIsImV4cCI6MTcxODU2NjIzMn0.Vk8KwGLPAukWsjjk9A91M_3Aqr2csO4sYemCcxMUy8k\",\n        \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJyb2xlIjoiT1dORVIiLCJlbWFpbCI6ImpvaG4uZG9lMTIzQGV4YW1wbGUuY29tIiwiZnVsbE5hbWUiOiJKb2huIERvZSJ9LCJpYXQiOjE3MTg1Mzc0MzIsImV4cCI6MTcxOTE0MjIzMn0.5wJRKxVkPX9UXTCzPRdHTOLgQDCZvkBa1peK7qEjhUo\"\n    }\n}"
+						},
+						{
+							"name": "Invalid Creds",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"john.doe123@example.com\",\r\n  \"password\": \"ENTAH\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "https://editor.swagger.io"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "33"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"21-10Yc7UhEvgvMDtpQHJBDqUZFnuA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 16 Jun 2024 11:31:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Invalid Credentials\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo2LCJmdWxsTmFtZSI6IkpvaG4gRG9lIiwiZW1haWwiOiJqb2huLmRvZTEyQGV4YW1wbGUuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkQk9jM0JIeGNralF4dFdmZUUxR0RGdWlmOEJoNktwcGJVM2REYnR1VmVyNWdDVU1VN0FqWUMiLCJyb2xlIjoiVVNFUiIsImFkZHJlc3NEZXRhaWwiOm51bGwsInByb3ZpbmNlIjpudWxsLCJkaXN0cmljdCI6bnVsbCwicG9zdGFsQ29kZSI6bnVsbCwicGhvbmVOdW1iZXIiOm51bGwsImJpcnRoRGF0ZSI6bnVsbCwiY3JlYXRlZEF0IjoiMjAyNC0wNi0xNVQwNzozMzo0My4xOTRaIiwidXBkYXRlZEF0IjoiMjAyNC0wNi0xNVQwNzozMzo0My4xOTRaIn0sImlhdCI6MTcxODQzNjkxOCwiZXhwIjoxNzE4NDY1NzE4fQ.mkSURwpOyzUzPfBLPubclu0wM6s3K_1jYI7mAyidKmg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/auth/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "[OWNER/USER] Logout",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/auth/logout",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "https://editor.swagger.io"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "32"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"20-OmL2xS5vWYkDzgU/AWkkViWJBp4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 16 Jun 2024 11:31:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Logout successful.\"\n}"
+						},
+						{
+							"name": "No Bearer Token",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/auth/logout",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"logout"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "https://editor.swagger.io"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "26"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a-pljHtlo127JYJR4E/RYOPb6ucbw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 16 Jun 2024 11:32:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Unauthorized\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Refresh Token",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo2LCJmdWxsTmFtZSI6IkpvaG4gRG9lIiwiZW1haWwiOiJqb2huLmRvZTEyQGV4YW1wbGUuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkQk9jM0JIeGNralF4dFdmZUUxR0RGdWlmOEJoNktwcGJVM2REYnR1VmVyNWdDVU1VN0FqWUMiLCJyb2xlIjoiVVNFUiIsImFkZHJlc3NEZXRhaWwiOm51bGwsInByb3ZpbmNlIjpudWxsLCJkaXN0cmljdCI6bnVsbCwicG9zdGFsQ29kZSI6bnVsbCwicGhvbmVOdW1iZXIiOm51bGwsImJpcnRoRGF0ZSI6bnVsbCwiY3JlYXRlZEF0IjoiMjAyNC0wNi0xNVQwNzozMzo0My4xOTRaIiwidXBkYXRlZEF0IjoiMjAyNC0wNi0xNVQwNzozMzo0My4xOTRaIn0sImlhdCI6MTcxODQzNzA2MCwiZXhwIjoxNzE5MDQxODYwfQ.Aid4wMOT77hd2ZJwu9nHh2Sh14SdNf-plNekvH65aUc\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/token/refresh",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"token",
+								"refresh"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJyb2xlIjoiT1dORVIiLCJlbWFpbCI6ImpvaG4uZG9lMTIzQGV4YW1wbGUuY29tIiwiZnVsbE5hbWUiOiJKb2huIERvZSJ9LCJpYXQiOjE3MTg1Mzc2MDIsImV4cCI6MTcxOTE0MjQwMn0.UE5o3um9019zpE7liOa4Wm5Z9gH4dftFwChp5Ju1dRA\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/token/refresh",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"token",
+										"refresh"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "https://editor.swagger.io"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "300"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"12c-irFKrPU8lE+oUZ5wza3eTEfi5Mk\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 16 Jun 2024 11:33:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Token refreshed.\",\n    \"data\": {\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJyb2xlIjoiT1dORVIiLCJlbWFpbCI6ImpvaG4uZG9lMTIzQGV4YW1wbGUuY29tIiwiZnVsbE5hbWUiOiJKb2huIERvZSJ9LCJpYXQiOjE3MTg1Mzc2MTYsImV4cCI6MTcxODU2NjQxNn0.fsi0zIBgK-I5T47UP539VRuAzJaUV3uzF9s6uz0BaG4\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoyLCJyb2xlIjoiVVNFUiIsImVtYWlsIjoiam9obi5kb2UxMkBleGFtcGxlLmNvbSIsImZ1bGxOYW1lIjoiSm9obiBEb2UifSwiaWF0IjoxNzE4NjM2MjYwLCJleHAiOjE3MTg2NjUwNjB9.TTVh8x_NIVITjH3txZ1mrLin6Qal8AQdLclRv3jjJ64",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/profile",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"profile"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "[USER | OWNER] Success",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"fullName\": \"John Doe\",\r\n  \"addressDetail\": \"123 Main St\",\r\n  \"province\": \"Ontario\",\r\n  \"district\": \"Central\",\r\n  \"postalCode\": \"A1B 2C3\",\r\n  \"phoneNumber\": \"123-456-7890\",\r\n  \"birthDate\": \"1990-01-01T00:00:00.000Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/profile",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"profile"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "https://editor.swagger.io"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "368"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"170-+H9Ig58V5Svja7JVcrZEz38gaTc\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 17 Jun 2024 15:07:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Profile updated successfully\",\n    \"data\": {\n        \"id\": 2,\n        \"fullName\": \"John Doe\",\n        \"email\": \"john.doe12@example.com\",\n        \"role\": \"USER\",\n        \"addressDetail\": \"123 Main St\",\n        \"province\": \"Ontario\",\n        \"district\": \"Central\",\n        \"postalCode\": \"A1B 2C3\",\n        \"phoneNumber\": \"123-456-7890\",\n        \"birthDate\": \"1990-01-01T00:00:00.000Z\",\n        \"createdAt\": \"2024-06-15T20:35:58.879Z\",\n        \"updatedAt\": \"2024-06-17T15:07:45.132Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Profile",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/auth/profile",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"profile"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "https://editor.swagger.io"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "306"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"132-XZcg9Y0GZMdxOW4dvu+ygLCPkbE\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Jun 2024 17:52:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Profile retrieved successfully\",\n    \"data\": {\n        \"id\": 234,\n        \"fullName\": \"Nyoo\",\n        \"email\": \"nyoo@example.com\",\n        \"role\": \"USER\",\n        \"addressDetail\": null,\n        \"province\": null,\n        \"district\": null,\n        \"postalCode\": null,\n        \"phoneNumber\": null,\n        \"birthDate\": null,\n        \"createdAt\": \"2024-06-19T17:52:08.759Z\",\n        \"updatedAt\": \"2024-06-19T17:52:08.759Z\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJyb2xlIjoiT1dORVIiLCJlbWFpbCI6ImpvaG4uZG9lMTIzQGV4YW1wbGUuY29tIiwiZnVsbE5hbWUiOiJKb2huIERvZSJ9LCJpYXQiOjE3MTg1Mzc0MzIsImV4cCI6MTcxOTE0MjIzMn0.5wJRKxVkPX9UXTCzPRdHTOLgQDCZvkBa1peK7qEjhUo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Classic White T-Shirt 2\",\r\n  \"images\": [\r\n    \"https://example.com/images/classic_white_tshirt.jpg\",\r\n    \"https://example.com/images/classic_white_tshirt_back.jpg\"\r\n  ],\r\n  \"description\": \"A timeless and comfortable white t-shirt made from 100% cotton.\",\r\n  \"retailPrice\": 19.99,\r\n  \"rentPrice\": 5.99,\r\n  \"size\": \"M\",\r\n  \"color\": \"White\",\r\n  \"status\": \"AVAILABLE\",\r\n  \"stylishNotes\": \"Note\",\r\n  \"categoryId\": 1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/products",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Classic White T-Shirt\",\r\n  \"images\": [\r\n    \"https://example.com/images/classic_white_tshirt.jpg\",\r\n    \"https://example.com/images/classic_white_tshirt_back.jpg\"\r\n  ],\r\n  \"description\": \"A timeless and comfortable white t-shirt made from 100% cotton.\",\r\n  \"retailPrice\": 19.99,\r\n  \"rentPrice\": 5.99,\r\n  \"size\": \"M\",\r\n  \"color\": \"White\",\r\n  \"status\": \"AVAILABLE\",\r\n  \"stylishNotes\": \"Note\",\r\n  \"categoryId\": 1,\r\n  \"ownerId\": 6\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/products",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"products"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "[OWNER] Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Classic White T-Shirt 2\",\r\n  \"images\": [\r\n    \"https://example.com/images/classic_white_tshirt.jpg\",\r\n    \"https://example.com/images/classic_white_tshirt_back.jpg\"\r\n  ],\r\n  \"description\": \"A timeless and comfortable white t-shirt made from 100% cotton.\",\r\n  \"retailPrice\": 19.99,\r\n  \"rentPrice\": 5.99,\r\n  \"size\": \"M\",\r\n  \"color\": \"White\",\r\n  \"status\": \"AVAILABLE\",\r\n  \"stylishNotes\": \"Note\",\r\n  \"categoryId\": 1\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/products",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "https://editor.swagger.io"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "511"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1ff-JQYTql3HMOdU/iz0YDUi33+e9Bw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 16 Jun 2024 11:39:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Product created successfully\",\n    \"data\": {\n        \"id\": 6,\n        \"name\": \"Classic White T-Shirt 2\",\n        \"images\": [\n            \"https://example.com/images/classic_white_tshirt.jpg\",\n            \"https://example.com/images/classic_white_tshirt_back.jpg\"\n        ],\n        \"description\": \"A timeless and comfortable white t-shirt made from 100% cotton.\",\n        \"stylishNotes\": \"Note\",\n        \"retailPrice\": \"19.99\",\n        \"rentPrice\": \"5.99\",\n        \"size\": \"M\",\n        \"categoryId\": 1,\n        \"color\": \"White\",\n        \"status\": \"AVAILABLE\",\n        \"ownerId\": 1,\n        \"createdAt\": \"2024-06-16T11:39:19.489Z\",\n        \"updatedAt\": \"2024-06-16T11:39:19.489Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PATCH",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "[OWNER] Success",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"categoryId\": 2\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/products/6",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"products",
+										"6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "https://editor.swagger.io"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "511"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1ff-12qZAijVfmu+uXZzdVVH8jsVZWw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 16 Jun 2024 11:41:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Product updated successfully\",\n    \"data\": {\n        \"id\": 6,\n        \"name\": \"Classic White T-Shirt 2\",\n        \"images\": [\n            \"https://example.com/images/classic_white_tshirt.jpg\",\n            \"https://example.com/images/classic_white_tshirt_back.jpg\"\n        ],\n        \"description\": \"A timeless and comfortable white t-shirt made from 100% cotton.\",\n        \"stylishNotes\": \"Note\",\n        \"retailPrice\": \"19.99\",\n        \"rentPrice\": \"5.99\",\n        \"size\": \"M\",\n        \"categoryId\": 2,\n        \"color\": \"White\",\n        \"status\": \"AVAILABLE\",\n        \"ownerId\": 1,\n        \"createdAt\": \"2024-06-16T11:39:19.489Z\",\n        \"updatedAt\": \"2024-06-16T11:41:39.270Z\"\n    }\n}"
+						},
+						{
+							"name": "[OWNER] Multifields",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"categoryId\": 2,\r\n  \"name\": \"Cool White T-Shirt\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/products/6",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"products",
+										"6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "https://editor.swagger.io"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "506"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1fa-RHEJvn6TExHbNmHmP3K+Dd5b9dc\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 16 Jun 2024 11:42:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Product updated successfully\",\n    \"data\": {\n        \"id\": 6,\n        \"name\": \"Cool White T-Shirt\",\n        \"images\": [\n            \"https://example.com/images/classic_white_tshirt.jpg\",\n            \"https://example.com/images/classic_white_tshirt_back.jpg\"\n        ],\n        \"description\": \"A timeless and comfortable white t-shirt made from 100% cotton.\",\n        \"stylishNotes\": \"Note\",\n        \"retailPrice\": \"19.99\",\n        \"rentPrice\": \"5.99\",\n        \"size\": \"M\",\n        \"categoryId\": 2,\n        \"color\": \"White\",\n        \"status\": \"AVAILABLE\",\n        \"ownerId\": 1,\n        \"createdAt\": \"2024-06-16T11:39:19.489Z\",\n        \"updatedAt\": \"2024-06-16T11:42:15.965Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/products?includeOwner=true&includeCategory=true&page=1&take=5&categoryId=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "includeOwner",
+									"value": "true"
+								},
+								{
+									"key": "includeCategory",
+									"value": "true"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "take",
+									"value": "5"
+								},
+								{
+									"key": "categoryId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/products?includeOwner=true&includeCategory=true&page=1&take=10",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"products"
+									],
+									"query": [
+										{
+											"key": "includeOwner",
+											"value": "true",
+											"description": "optional"
+										},
+										{
+											"key": "includeCategory",
+											"value": "true",
+											"description": "optional"
+										},
+										{
+											"key": "page",
+											"value": "1",
+											"description": "optional"
+										},
+										{
+											"key": "take",
+											"value": "10",
+											"description": "optional"
+										},
+										{
+											"key": "categoryId",
+											"value": "2",
+											"description": "optional",
+											"disabled": true
+										},
+										{
+											"key": "search",
+											"value": "shirt",
+											"description": "optional, case insensitive",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "https://editor.swagger.io"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b4a-t3IJS0j9/JL3M5vuzB5cbVesEjg\""
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 16 Jun 2024 11:42:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"OK\",\n    \"data\": {\n        \"count\": 6,\n        \"products\": [\n            {\n                \"id\": 6,\n                \"name\": \"Cool White T-Shirt\",\n                \"images\": [\n                    \"https://example.com/images/classic_white_tshirt.jpg\",\n                    \"https://example.com/images/classic_white_tshirt_back.jpg\"\n                ],\n                \"description\": \"A timeless and comfortable white t-shirt made from 100% cotton.\",\n                \"stylishNotes\": \"Note\",\n                \"retailPrice\": \"19.99\",\n                \"rentPrice\": \"5.99\",\n                \"size\": \"M\",\n                \"categoryId\": 2,\n                \"color\": \"White\",\n                \"status\": \"AVAILABLE\",\n                \"ownerId\": 1,\n                \"createdAt\": \"2024-06-16T11:39:19.489Z\",\n                \"updatedAt\": \"2024-06-16T11:42:15.965Z\",\n                \"category\": {\n                    \"id\": 2,\n                    \"name\": \"Category 2\"\n                },\n                \"owner\": {\n                    \"id\": 1,\n                    \"fullName\": \"John Doe\"\n                },\n                \"avgRating\": null,\n                \"reviewsCount\": 0\n            },\n            {\n                \"id\": 5,\n                \"name\": \"Product 5\",\n                \"images\": [\n                    \"image5_1.jpg\",\n                    \"image5_2.jpg\"\n                ],\n                \"description\": \"Description for Product 5\",\n                \"stylishNotes\": \"Stylish notes for Product 5\",\n                \"retailPrice\": \"105\",\n                \"rentPrice\": \"15\",\n                \"size\": \"M\",\n                \"categoryId\": 5,\n                \"color\": \"Red\",\n                \"status\": \"AVAILABLE\",\n                \"ownerId\": 7,\n                \"createdAt\": \"2024-06-15T20:37:48.251Z\",\n                \"updatedAt\": \"2024-06-15T20:37:48.251Z\",\n                \"category\": {\n                    \"id\": 5,\n                    \"name\": \"Category 5\"\n                },\n                \"owner\": {\n                    \"id\": 7,\n                    \"fullName\": \"User 5\"\n                },\n                \"avgRating\": null,\n                \"reviewsCount\": 0\n            },\n            {\n                \"id\": 4,\n                \"name\": \"Product 4\",\n                \"images\": [\n                    \"image4_1.jpg\",\n                    \"image4_2.jpg\"\n                ],\n                \"description\": \"Description for Product 4\",\n                \"stylishNotes\": \"Stylish notes for Product 4\",\n                \"retailPrice\": \"104\",\n                \"rentPrice\": \"14\",\n                \"size\": \"M\",\n                \"categoryId\": 4,\n                \"color\": \"Red\",\n                \"status\": \"AVAILABLE\",\n                \"ownerId\": 6,\n                \"createdAt\": \"2024-06-15T20:37:48.223Z\",\n                \"updatedAt\": \"2024-06-15T20:37:48.223Z\",\n                \"category\": {\n                    \"id\": 4,\n                    \"name\": \"Category 4\"\n                },\n                \"owner\": {\n                    \"id\": 6,\n                    \"fullName\": \"User 4\"\n                },\n                \"avgRating\": null,\n                \"reviewsCount\": 0\n            },\n            {\n                \"id\": 3,\n                \"name\": \"Product 3\",\n                \"images\": [\n                    \"image3_1.jpg\",\n                    \"image3_2.jpg\"\n                ],\n                \"description\": \"Description for Product 3\",\n                \"stylishNotes\": \"Stylish notes for Product 3\",\n                \"retailPrice\": \"103\",\n                \"rentPrice\": \"13\",\n                \"size\": \"M\",\n                \"categoryId\": 3,\n                \"color\": \"Red\",\n                \"status\": \"AVAILABLE\",\n                \"ownerId\": 5,\n                \"createdAt\": \"2024-06-15T20:37:48.195Z\",\n                \"updatedAt\": \"2024-06-15T20:37:48.195Z\",\n                \"category\": {\n                    \"id\": 3,\n                    \"name\": \"Category 3\"\n                },\n                \"owner\": {\n                    \"id\": 5,\n                    \"fullName\": \"User 3\"\n                },\n                \"avgRating\": null,\n                \"reviewsCount\": 0\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Product 2\",\n                \"images\": [\n                    \"image2_1.jpg\",\n                    \"image2_2.jpg\"\n                ],\n                \"description\": \"Description for Product 2\",\n                \"stylishNotes\": \"Stylish notes for Product 2\",\n                \"retailPrice\": \"102\",\n                \"rentPrice\": \"12\",\n                \"size\": \"M\",\n                \"categoryId\": 2,\n                \"color\": \"Red\",\n                \"status\": \"AVAILABLE\",\n                \"ownerId\": 4,\n                \"createdAt\": \"2024-06-15T20:37:48.168Z\",\n                \"updatedAt\": \"2024-06-15T20:37:48.168Z\",\n                \"category\": {\n                    \"id\": 2,\n                    \"name\": \"Category 2\"\n                },\n                \"owner\": {\n                    \"id\": 4,\n                    \"fullName\": \"User 2\"\n                },\n                \"avgRating\": null,\n                \"reviewsCount\": 0\n            },\n            {\n                \"id\": 1,\n                \"name\": \"Product 1\",\n                \"images\": [\n                    \"image1_1.jpg\",\n                    \"image1_2.jpg\"\n                ],\n                \"description\": \"Description for Product 1\",\n                \"stylishNotes\": \"Stylish notes for Product 1\",\n                \"retailPrice\": \"101\",\n                \"rentPrice\": \"11\",\n                \"size\": \"M\",\n                \"categoryId\": 1,\n                \"color\": \"Red\",\n                \"status\": \"AVAILABLE\",\n                \"ownerId\": 3,\n                \"createdAt\": \"2024-06-15T20:37:48.137Z\",\n                \"updatedAt\": \"2024-06-15T20:37:48.137Z\",\n                \"category\": {\n                    \"id\": 1,\n                    \"name\": \"Category 1\"\n                },\n                \"owner\": {\n                    \"id\": 3,\n                    \"fullName\": \"User 1\"\n                },\n                \"avgRating\": 2,\n                \"reviewsCount\": 5\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Upload  Image",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJmdWxsTmFtZSI6IkpvaG4gRG9lIiwiZW1haWwiOiJqb2huLmRvZTEyM0BleGFtcGxlLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJHouMGhZbUU3SVY0SVE0RnV2emdyWC5yRkEwN0QwaHUwclJNdEE0ZGppN1lQeEFsQjJNNHRDIiwicm9sZSI6Ik9XTkVSIiwiYWRkcmVzc0RldGFpbCI6bnVsbCwicHJvdmluY2UiOm51bGwsImRpc3RyaWN0IjpudWxsLCJwb3N0YWxDb2RlIjpudWxsLCJwaG9uZU51bWJlciI6bnVsbCwiYmlydGhEYXRlIjpudWxsLCJjcmVhdGVkQXQiOiIyMDI0LTA2LTE1VDIwOjM1OjQ4LjI1N1oiLCJ1cGRhdGVkQXQiOiIyMDI0LTA2LTE1VDIwOjM1OjQ4LjI1N1oifSwiaWF0IjoxNzE4NTM2MjAwLCJleHAiOjE3MTg1NjUwMDB9.bS0N-htEfxXyVDV7RqQJ0BrlzP_hnIACagEMOX2rVR4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"description": "MAX 5MB",
+									"type": "file",
+									"src": "/D:/0a77ab9b741887432031c9d0670ac3f3.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/products/image/upload",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"image",
+								"upload"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "[OWNER] Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/D:/0a77ab9b741887432031c9d0670ac3f3.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/products/image/upload",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"products",
+										"image",
+										"upload"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "https://editor.swagger.io"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "150"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"96-1YWNhNiled0LaERxFJBWR/m3LCA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 16 Jun 2024 11:43:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Image uploaded successfully\",\n    \"data\": {\n        \"imageUrl\": \"https://storage.googleapis.com/img-product-amoure/0a77ab9b741887432031c9d0670ac3f3.jpg\"\n    }\n}"
+						},
+						{
+							"name": "No file attached",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"description": "MAX 5MB",
+											"type": "file",
+											"src": "/D:/0a77ab9b741887432031c9d0670ac3f3.jpg",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/products/image/upload",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"products",
+										"image",
+										"upload"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "https://editor.swagger.io"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "236"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ec-62+WowhvW7Mr4dRtKADZYgFLDnw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 16 Jun 2024 11:43:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Validation Error\",\n    \"errors\": {\n        \"formErrors\": [],\n        \"fieldErrors\": {\n            \"buffer\": [\n                \"Input not instance of Buffer\"\n            ],\n            \"originalname\": [\n                \"Required\"\n            ],\n            \"encoding\": [\n                \"Required\"\n            ],\n            \"mimetype\": [\n                \"Required\"\n            ],\n            \"size\": [\n                \"Required\"\n            ],\n            \"fieldname\": [\n                \"Required\"\n            ]\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/products/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"products",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "https://editor.swagger.io"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e45-tkP0wNeJysWrE22JU9LOB+DdAWY\""
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Jun 2024 18:14:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"OK\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Canvas Paper Bag Shorts\",\n        \"images\": [\n            \"https://storage.googleapis.com/img-product-amoure/1_0.jpg\",\n            \"https://storage.googleapis.com/img-product-amoure/1_1.jpg\",\n            \"https://storage.googleapis.com/img-product-amoure/1_2.jpg\",\n            \"https://storage.googleapis.com/img-product-amoure/1_3.jpg\",\n            \"https://storage.googleapis.com/img-product-amoure/1_4.jpg\"\n        ],\n        \"description\": \"White Cotton (100% Cotton). Shorts. Paperbag waistband. Immported\",\n        \"stylishNotes\": \"Utilitarian pockets add a trendy touch to these tie-waist trouser shorts frombassike topped with a stylish paperbag waist.\",\n        \"retailPrice\": \"1560000\",\n        \"rentPrice\": \"310000\",\n        \"size\": \"L\",\n        \"categoryId\": 1,\n        \"color\": \"FREE\",\n        \"status\": \"ON_RENT\",\n        \"ownerId\": 1,\n        \"createdAt\": \"2024-06-18T18:02:00.000Z\",\n        \"updatedAt\": \"2024-06-18T18:02:00.000Z\",\n        \"similarItems\": [\n            2,\n            3,\n            4\n        ],\n        \"category\": {\n            \"id\": 1,\n            \"name\": \"Shorts\"\n        },\n        \"owner\": {\n            \"id\": 1,\n            \"fullName\": \"Bassike\"\n        },\n        \"_avg\": {\n            \"rating\": 4\n        },\n        \"_count\": 1,\n        \"similarProducts\": {\n            \"count\": 3,\n            \"products\": [\n                {\n                    \"id\": 2,\n                    \"name\": \"Girlfriend Tie Dye Shorts\",\n                    \"images\": [\n                        \"https://storage.googleapis.com/img-product-amoure/2_0.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/2_1.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/2_2.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/2_3.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/2_4.jpg\"\n                    ],\n                    \"description\": \"Multicolor printed cotton (96% Cotton, 4% Spandex). Shorts. Elastic waistband. Pockets. Inseam: 2\\\". Rise: 11\\\". Imported.\",\n                    \"stylishNotes\": \"Rainbow tie-dye brightens the laid-back appeal of these lounge-ready shorts from Show Me Your Mumu.MatchingSweatshirtalso available.\",\n                    \"retailPrice\": \"650000\",\n                    \"rentPrice\": \"130000\",\n                    \"size\": \"L\",\n                    \"categoryId\": 1,\n                    \"color\": \"FREE\",\n                    \"status\": \"ON_RENT\",\n                    \"ownerId\": 2,\n                    \"createdAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"updatedAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"similarItems\": [],\n                    \"avgRating\": 5,\n                    \"reviewsCount\": 1\n                },\n                {\n                    \"id\": 3,\n                    \"name\": \"Lora Shorts\",\n                    \"images\": [\n                        \"https://storage.googleapis.com/img-product-amoure/3_0.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/3_1.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/3_2.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/3_3.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/3_4.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/3_5.jpg\"\n                    ],\n                    \"description\": \"Black floral printed crepe (55% Viscose, 45% Rayon). Shorts. Drawstring tie closure.Imported.\",\n                    \"stylishNotes\": \"A floral bohemian print defines these summer-essential AFRM shorts finished with handy side pockets in a comfortable stretch waistband.MatchingCrop Topalso available.\",\n                    \"retailPrice\": \"700000\",\n                    \"rentPrice\": \"140000\",\n                    \"size\": \"L\",\n                    \"categoryId\": 1,\n                    \"color\": \"FREE\",\n                    \"status\": \"ON_RENT\",\n                    \"ownerId\": 3,\n                    \"createdAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"updatedAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"similarItems\": [],\n                    \"avgRating\": 5,\n                    \"reviewsCount\": 1\n                },\n                {\n                    \"id\": 4,\n                    \"name\": \"Diane Shorts\",\n                    \"images\": [\n                        \"https://storage.googleapis.com/img-product-amoure/4_0.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/4_1.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/4_2.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/4_3.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/4_4.jpg\"\n                    ],\n                    \"description\": \"Blue cotton (100% Cotton). Shorts. Front zipper fly with hook-and-eye closure. Pockets. Imported.\",\n                    \"stylishNotes\": \"A high waist and kicked hem bring sailor-inspired style to these easy-to-wear shorts by A.P.C.This style may require additional, at-home steaming.\",\n                    \"retailPrice\": \"1530000\",\n                    \"rentPrice\": \"310000\",\n                    \"size\": \"L\",\n                    \"categoryId\": 1,\n                    \"color\": \"FREE\",\n                    \"status\": \"ON_RENT\",\n                    \"ownerId\": 4,\n                    \"createdAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"updatedAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"similarItems\": [],\n                    \"avgRating\": 5,\n                    \"reviewsCount\": 1\n                }\n            ]\n        }\n    }\n}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJyb2xlIjoiT1dORVIiLCJlbWFpbCI6ImpvaG4uZG9lMTIzQGV4YW1wbGUuY29tIiwiZnVsbE5hbWUiOiJKb2huIERvZSJ9LCJpYXQiOjE3MTg1Mzc0MzIsImV4cCI6MTcxODU2NjIzMn0.Vk8KwGLPAukWsjjk9A91M_3Aqr2csO4sYemCcxMUy8k",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/categories",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/categories",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"categories"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "https://editor.swagger.io"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "170"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"aa-QZtTFZmN7lG/PCpypoY2ytv1T+o\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 16 Jun 2024 11:43:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"OK\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Category 1\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Category 2\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Category 3\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Category 4\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Category 5\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Wishlist",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": 7\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/wishlist",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"wishlist"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "[USER] Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productId\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/wishlist",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"wishlist"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "https://editor.swagger.io"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "50"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"32-rai271oprg+VGcn99Pvdw8cOJL0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 16 Jun 2024 11:44:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"OK\",\n    \"data\": {\n        \"productId\": 1,\n        \"userId\": 8\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "[USER] Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/wishlist?includeProducts=true",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"wishlist"
+									],
+									"query": [
+										{
+											"key": "includeProducts",
+											"value": "true",
+											"description": "optional"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "https://editor.swagger.io"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "429"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1ad-NsEPKAZPujeu2SlS1y2gEH4nxs4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 16 Jun 2024 11:45:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"OK\",\n    \"data\": {\n        \"wishlist\": [\n            {\n                \"productId\": 1,\n                \"userId\": 8,\n                \"product\": {\n                    \"id\": 1,\n                    \"name\": \"Product 1\",\n                    \"images\": [\n                        \"image1_1.jpg\",\n                        \"image1_2.jpg\"\n                    ],\n                    \"description\": \"Description for Product 1\",\n                    \"stylishNotes\": \"Stylish notes for Product 1\",\n                    \"retailPrice\": \"101\",\n                    \"rentPrice\": \"11\",\n                    \"size\": \"M\",\n                    \"categoryId\": 1,\n                    \"color\": \"Red\",\n                    \"status\": \"AVAILABLE\",\n                    \"ownerId\": 3,\n                    \"createdAt\": \"2024-06-15T20:37:48.137Z\",\n                    \"updatedAt\": \"2024-06-15T20:37:48.137Z\"\n                }\n            }\n        ],\n        \"count\": 1\n    }\n}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo4LCJyb2xlIjoiVVNFUiIsImVtYWlsIjoibnlvb0BleGFtcGxlLmNvbSIsImZ1bGxOYW1lIjoiTnlvbyJ9LCJpYXQiOjE3MTg1MzczNjIsImV4cCI6MTcxODU2NjE2Mn0.FOb-UNnPeUBxIllyUTLYjIJOL7qU2abCityurCt08N4",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Review",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo3LCJmdWxsTmFtZSI6IkpvaG4gRG9lIiwiZW1haWwiOiJqb2huLmRvZTEyQGV4YW1wbGUuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkZ3ZLSGE3WENkcWdQZFBDNlhIaWFhdUdNanFrOFNPdk1sUkVkZkZ2Q0x0QktMeTlIZU1JNUciLCJyb2xlIjoiVVNFUiIsImFkZHJlc3NEZXRhaWwiOm51bGwsInByb3ZpbmNlIjpudWxsLCJkaXN0cmljdCI6bnVsbCwicG9zdGFsQ29kZSI6bnVsbCwicGhvbmVOdW1iZXIiOm51bGwsImJpcnRoRGF0ZSI6bnVsbCwiY3JlYXRlZEF0IjoiMjAyNC0wNi0xNVQxMToxNDozMS40NzRaIiwidXBkYXRlZEF0IjoiMjAyNC0wNi0xNVQxMToxNDozMS40NzRaIn0sImlhdCI6MTcxODQ4MDQ4MiwiZXhwIjoxNzE4NTA5MjgyfQ.DEqYa7ZgYq0vICsjhSH4Aj8t-YHtXFtGEPvViUSPbK0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": 5,\r\n    \"rating\": 5,\r\n    \"comment\": \"Nice shirt\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/reviews",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"reviews"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "[USER] Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productId\": 2,\r\n    \"rating\": 5,\r\n    \"comment\": \"Nice shirt\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/reviews",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"reviews"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "https://editor.swagger.io"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "155"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9b-r2HKmvUhIt6m8k9RiG0OBr+Z/sA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 16 Jun 2024 11:45:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Review created successfully\",\n    \"data\": {\n        \"id\": 6,\n        \"rating\": 5,\n        \"comment\": \"Nice shirt\",\n        \"userId\": 8,\n        \"productId\": 2,\n        \"createdAt\": \"2024-06-16T11:45:43.560Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/reviews?includeUser=true",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"reviews"
+									],
+									"query": [
+										{
+											"key": "productId",
+											"value": "5",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "take",
+											"value": "10",
+											"disabled": true
+										},
+										{
+											"key": "includeUser",
+											"value": "true"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "https://editor.swagger.io"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "979"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3d3-V7eqH4DXiQ29o4Mm9uSTcGYAsKI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 16 Jun 2024 11:46:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"OK\",\n    \"data\": {\n        \"reviews\": [\n            {\n                \"id\": 6,\n                \"rating\": 5,\n                \"comment\": \"Nice shirt\",\n                \"userId\": 8,\n                \"productId\": 2,\n                \"createdAt\": \"2024-06-16T11:45:43.560Z\",\n                \"user\": {\n                    \"id\": 8,\n                    \"fullName\": \"Nyoo\"\n                }\n            },\n            {\n                \"id\": 5,\n                \"rating\": 0,\n                \"comment\": \"Review 5 for Product 1\",\n                \"userId\": 7,\n                \"productId\": 1,\n                \"createdAt\": \"2024-06-15T20:37:48.393Z\",\n                \"user\": {\n                    \"id\": 7,\n                    \"fullName\": \"User 5\"\n                }\n            },\n            {\n                \"id\": 4,\n                \"rating\": 1,\n                \"comment\": \"Review 4 for Product 1\",\n                \"userId\": 6,\n                \"productId\": 1,\n                \"createdAt\": \"2024-06-15T20:37:48.366Z\",\n                \"user\": {\n                    \"id\": 6,\n                    \"fullName\": \"User 4\"\n                }\n            },\n            {\n                \"id\": 3,\n                \"rating\": 2,\n                \"comment\": \"Review 3 for Product 1\",\n                \"userId\": 5,\n                \"productId\": 1,\n                \"createdAt\": \"2024-06-15T20:37:48.337Z\",\n                \"user\": {\n                    \"id\": 5,\n                    \"fullName\": \"User 3\"\n                }\n            },\n            {\n                \"id\": 2,\n                \"rating\": 3,\n                \"comment\": \"Review 2 for Product 1\",\n                \"userId\": 4,\n                \"productId\": 1,\n                \"createdAt\": \"2024-06-15T20:37:48.307Z\",\n                \"user\": {\n                    \"id\": 4,\n                    \"fullName\": \"User 2\"\n                }\n            },\n            {\n                \"id\": 1,\n                \"rating\": 4,\n                \"comment\": \"Review 1 for Product 1\",\n                \"userId\": 3,\n                \"productId\": 1,\n                \"createdAt\": \"2024-06-15T20:37:48.279Z\",\n                \"user\": {\n                    \"id\": 3,\n                    \"fullName\": \"User 1\"\n                }\n            }\n        ],\n        \"count\": 6,\n        \"avgRating\": 2.5\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/reviews/7",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"reviews",
+								"7"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Not found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/reviews/7",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"reviews",
+										"7"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "https://editor.swagger.io"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "23"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"17-SuRA/yvUWUo8rK6x7dKURLeBo+0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 16 Jun 2024 11:47:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Not Found\"\n}"
+						},
+						{
+							"name": "[USER] Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/reviews/6",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"reviews",
+										"6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "https://editor.swagger.io"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "41"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"29-eJZH9QbGPKzQCQgLPX3JFUdcheo\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 16 Jun 2024 11:48:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Review deleted successfully\"\n}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo4LCJyb2xlIjoiVVNFUiIsImVtYWlsIjoibnlvb0BleGFtcGxlLmNvbSIsImZ1bGxOYW1lIjoiTnlvbyJ9LCJpYXQiOjE3MTg1MzczNjIsImV4cCI6MTcxODU2NjE2Mn0.FOb-UNnPeUBxIllyUTLYjIJOL7qU2abCityurCt08N4",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Create Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": 1,\r\n    \"rentalStartDate\": \"2024-06-24T00:00:00.000Z\",\r\n    \"rentalEndDate\": \"2024-06-28T00:00:00.000Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/orders",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "[USER] Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productId\": 1,\r\n    \"rentalStartDate\": \"2024-06-24T00:00:00.000Z\",\r\n    \"rentalEndDate\": \"2024-06-28T00:00:00.000Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/orders",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"orders"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "https://editor.swagger.io"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "405"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"195-EDGII6aCcOd60sX1ABWwV6xppfo\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 17 Jun 2024 15:00:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"OK\",\n    \"data\": {\n        \"id\": 6,\n        \"userId\": 2,\n        \"productId\": 1,\n        \"productName\": \"Product 1\",\n        \"productSize\": \"M\",\n        \"productColor\": \"Red\",\n        \"rentPrice\": \"11\",\n        \"deliveryMethod\": \"FREE\",\n        \"deliveryPrice\": \"0\",\n        \"totalPrice\": \"11\",\n        \"rentalStartDate\": \"2024-06-24T00:00:00.000Z\",\n        \"rentalEndDate\": \"2024-06-28T00:00:00.000Z\",\n        \"rentalDuration\": 4,\n        \"status\": \"PENDING\",\n        \"createdAt\": \"2024-06-17T15:00:53.489Z\",\n        \"updatedAt\": \"2024-06-17T15:00:53.489Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/orders",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "[200] Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/orders",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"orders"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "https://editor.swagger.io"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "428"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1ac-pOCOMh/FDAx48D6lfgs6FJjrWbE\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 17 Jun 2024 15:04:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"OK\",\n    \"data\": {\n        \"orders\": [\n            {\n                \"id\": 6,\n                \"userId\": 2,\n                \"productId\": 1,\n                \"productName\": \"Product 1\",\n                \"productSize\": \"M\",\n                \"productColor\": \"Red\",\n                \"rentPrice\": \"11\",\n                \"deliveryMethod\": \"FREE\",\n                \"deliveryPrice\": \"0\",\n                \"totalPrice\": \"11\",\n                \"rentalStartDate\": \"2024-06-24T00:00:00.000Z\",\n                \"rentalEndDate\": \"2024-06-28T00:00:00.000Z\",\n                \"rentalDuration\": 4,\n                \"status\": \"PENDING\",\n                \"createdAt\": \"2024-06-17T15:00:53.489Z\",\n                \"updatedAt\": \"2024-06-17T15:00:53.489Z\"\n            }\n        ],\n        \"count\": 1\n    }\n}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoyLCJyb2xlIjoiVVNFUiIsImVtYWlsIjoiam9obi5kb2UxMkBleGFtcGxlLmNvbSIsImZ1bGxOYW1lIjoiSm9obiBEb2UifSwiaWF0IjoxNzE4NjM2MjYwLCJleHAiOjE3MTg2NjUwNjB9.TTVh8x_NIVITjH3txZ1mrLin6Qal8AQdLclRv3jjJ64",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "ML",
+			"item": [
+				{
+					"name": "vton",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Image Search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/ml/image/search?imageUrl=https://storage.googleapis.com/img-product-amoure/13_0.jpg",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"ml",
+								"image",
+								"search"
+							],
+							"query": [
+								{
+									"key": "imageUrl",
+									"value": "https://storage.googleapis.com/img-product-amoure/13_0.jpg"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Image Search",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/ml/image/search?imageUrl=https://storage.googleapis.com/img-product-amoure/13_0.jpg",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"ml",
+										"image",
+										"search"
+									],
+									"query": [
+										{
+											"key": "imageUrl",
+											"value": "https://storage.googleapis.com/img-product-amoure/13_0.jpg"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "https://editor.swagger.io"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4ce2-iY/EgsjrwBjSZw/vDLYmNT2xbY4\""
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Jun 2024 17:41:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"OK\",\n    \"data\": {\n        \"category\": \"jumpsuits_and_rompers\",\n        \"similarProducts\": {\n            \"count\": 20,\n            \"products\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Canvas Paper Bag Shorts\",\n                    \"images\": [\n                        \"https://storage.googleapis.com/img-product-amoure/1_0.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/1_1.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/1_2.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/1_3.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/1_4.jpg\"\n                    ],\n                    \"description\": \"White Cotton (100% Cotton). Shorts. Paperbag waistband. Immported\",\n                    \"stylishNotes\": \"Utilitarian pockets add a trendy touch to these tie-waist trouser shorts frombassike topped with a stylish paperbag waist.\",\n                    \"retailPrice\": \"1560000\",\n                    \"rentPrice\": \"310000\",\n                    \"size\": \"L\",\n                    \"categoryId\": 1,\n                    \"color\": \"FREE\",\n                    \"status\": \"ON_RENT\",\n                    \"ownerId\": 1,\n                    \"createdAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"updatedAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"avgRating\": 4,\n                    \"reviewsCount\": 1\n                },\n                {\n                    \"id\": 70,\n                    \"name\": \"Printed Linen Midi Skirt\",\n                    \"images\": [\n                        \"https://storage.googleapis.com/img-product-amoure/70_0.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/70_1.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/70_2.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/70_3.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/70_4.jpg\"\n                    ],\n                    \"description\": \"Multicolored floral (Shell: 53% Linen, 47% Cotton, Pocket lining: 82% Polyester, 18% Cotton). Skirt. Front button closure. 29\\\" from waist to hemline. Imported.\",\n                    \"stylishNotes\": \"Crafted with quality and attention to detail, this Eudon Choi Collective midi skirt offers a comfortable and stylish fit. The floral print and buttons along the front add a perfect touch of charm and sophistication. Pair with a white tee and ballet flats for a relaxed yet polished look.\",\n                    \"retailPrice\": \"1830000\",\n                    \"rentPrice\": \"370000\",\n                    \"size\": \"XL\",\n                    \"categoryId\": 2,\n                    \"color\": \"FREE\",\n                    \"status\": \"AVAILABLE\",\n                    \"ownerId\": 40,\n                    \"createdAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"updatedAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"avgRating\": null,\n                    \"reviewsCount\": 0\n                },\n                {\n                    \"id\": 110,\n                    \"name\": \"Asra Ecru Maxi Skirt\",\n                    \"images\": [\n                        \"https://storage.googleapis.com/img-product-amoure/110_0.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/110_1.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/110_2.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/110_3.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/110_4.jpg\"\n                    ],\n                    \"description\": \"Off-white denim (99% Cotton, 1% Lycra). Maxi. Front button fly closure. 37\\\" from waist to hemline. 9.5\\\" rise. Imported.\",\n                    \"stylishNotes\": \"The denim maxi skirt trend is still in full effect. Change up your standard denim for this creamy version by DL1961.\",\n                    \"retailPrice\": \"1430000\",\n                    \"rentPrice\": \"290000\",\n                    \"size\": \"S\",\n                    \"categoryId\": 2,\n                    \"color\": \"FREE\",\n                    \"status\": \"AVAILABLE\",\n                    \"ownerId\": 26,\n                    \"createdAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"updatedAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"avgRating\": null,\n                    \"reviewsCount\": 0\n                },\n                {\n                    \"id\": 153,\n                    \"name\": \"Chino Slit Front Sleeveless Tunic\",\n                    \"images\": [\n                        \"https://storage.googleapis.com/img-product-amoure/153_0.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/153_1.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/153_2.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/153_3.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/153_4.jpg\"\n                    ],\n                    \"description\": \"White (95% Cotton, 5% Elastane). Top. Sleeveless. Square neck. Front button closure. 29\\\" from shoulder to hemline. Imported.\",\n                    \"stylishNotes\": \"This Tibi sleeveless top offers minimalist elegance with its clean lines and crisp white hue. Its versatile design pairs effortlessly with casual denim or can be dressed up with tailored trousers.\",\n                    \"retailPrice\": \"2190000\",\n                    \"rentPrice\": \"440000\",\n                    \"size\": \"L\",\n                    \"categoryId\": 3,\n                    \"color\": \"FREE\",\n                    \"status\": \"AVAILABLE\",\n                    \"ownerId\": 43,\n                    \"createdAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"updatedAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"avgRating\": null,\n                    \"reviewsCount\": 0\n                },\n                {\n                    \"id\": 172,\n                    \"name\": \"Tie Waist Shirt\",\n                    \"images\": [\n                        \"https://storage.googleapis.com/img-product-amoure/172_0.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/172_1.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/172_2.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/172_3.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/172_4.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/172_5.jpg\"\n                    ],\n                    \"description\": \"White cotton (97% Cotton, 3% Spandex). Top. Short sleeves. Collared. Front button closure. 19.5\\\" from shoulder to hemline. Imported.\",\n                    \"stylishNotes\": \"This crisp white tie-front shirt from Adam Lippes Collective displays casual elegance with its structured collar and cuffed short sleeves. Pair it with a floral skirt for a breezy, feminine look, or opt for tailored trousers for a chic, polished ensemble.This style may require additional, at-home steaming.\",\n                    \"retailPrice\": \"1500000\",\n                    \"rentPrice\": \"300000\",\n                    \"size\": \"L\",\n                    \"categoryId\": 3,\n                    \"color\": \"FREE\",\n                    \"status\": \"AVAILABLE\",\n                    \"ownerId\": 92,\n                    \"createdAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"updatedAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"avgRating\": null,\n                    \"reviewsCount\": 0\n                },\n                {\n                    \"id\": 214,\n                    \"name\": \"Linen Button Front Top\",\n                    \"images\": [\n                        \"https://storage.googleapis.com/img-product-amoure/214_0.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/214_1.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/214_2.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/214_3.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/214_4.jpg\"\n                    ],\n                    \"description\": \"Brown linen (100% Linen). Top. Long sleeves. Collar. Front button closure. 28\\\" from shoulder to hemline. Imported.\",\n                    \"stylishNotes\": \"Beach chic goes to the office in this breezy button-down linen shirt by Club Monaco. Style with pleated linen trousers for a summer work look.This style may require additional, at-home steaming.\",\n                    \"retailPrice\": \"770000\",\n                    \"rentPrice\": \"150000\",\n                    \"size\": \"L\",\n                    \"categoryId\": 3,\n                    \"color\": \"FREE\",\n                    \"status\": \"AVAILABLE\",\n                    \"ownerId\": 34,\n                    \"createdAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"updatedAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"avgRating\": null,\n                    \"reviewsCount\": 0\n                },\n                {\n                    \"id\": 230,\n                    \"name\": \"Scout Top\",\n                    \"images\": [\n                        \"https://storage.googleapis.com/img-product-amoure/230_0.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/230_1.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/230_2.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/230_3.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/230_4.jpg\"\n                    ],\n                    \"description\": \"White cotton (100% Cotton). Top. Long sleeves. Collar. Back button closure. 27.5\\\" from shoulder to hemline. Made in the USA of imported fabric.\",\n                    \"stylishNotes\": \"Style this relaxed button-down blouse by XíRENA with paper bag waist pants for an effortlessly chic OOTD.\",\n                    \"retailPrice\": \"1190000\",\n                    \"rentPrice\": \"240000\",\n                    \"size\": \"L\",\n                    \"categoryId\": 3,\n                    \"color\": \"FREE\",\n                    \"status\": \"AVAILABLE\",\n                    \"ownerId\": 87,\n                    \"createdAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"updatedAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"avgRating\": null,\n                    \"reviewsCount\": 0\n                },\n                {\n                    \"id\": 411,\n                    \"name\": \"Halter Wrap Shirt Dress\",\n                    \"images\": [\n                        \"https://storage.googleapis.com/img-product-amoure/411_0.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/411_1.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/411_2.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/411_3.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/411_4.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/411_5.jpg\"\n                    ],\n                    \"description\": \"Off White (62% Cotton, 38% Polyester). Casual Dress. Collared neck. Sleeveless. Front button closure. 54\\\" from shoulder to hemline. Imported.\",\n                    \"stylishNotes\": \"This halter wrap shirt dress features a collared neckline, sleeveless design, and front button closure. Its neutral color allows for easy accessorizing, making it a timeless wardrobe staple.\",\n                    \"retailPrice\": \"1770000\",\n                    \"rentPrice\": \"350000\",\n                    \"size\": \"M\",\n                    \"categoryId\": 5,\n                    \"color\": \"FREE\",\n                    \"status\": \"AVAILABLE\",\n                    \"ownerId\": 40,\n                    \"createdAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"updatedAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"avgRating\": null,\n                    \"reviewsCount\": 0\n                },\n                {\n                    \"id\": 591,\n                    \"name\": \"Linen Tie Front Dress\",\n                    \"images\": [\n                        \"https://storage.googleapis.com/img-product-amoure/591_0.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/591_1.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/591_2.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/591_3.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/591_4.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/591_5.jpg\"\n                    ],\n                    \"description\": \"White (55% Linen, 45% Viscose). Casual dress. Long sleeves. Crew neck. Back zipper closure. 35.5\\\" from shoulder to hemline. Imported.\",\n                    \"stylishNotes\": \"This Michael Kors dress features a simple yet elegant design with a tied waist and full sleeves, offering a relaxed and chic vibe. Pair it with strappy sandals and statement earrings for a sophisticated look.This style may require additional, at-home steaming.\",\n                    \"retailPrice\": \"990000\",\n                    \"rentPrice\": \"200000\",\n                    \"size\": \"M\",\n                    \"categoryId\": 5,\n                    \"color\": \"FREE\",\n                    \"status\": \"AVAILABLE\",\n                    \"ownerId\": 160,\n                    \"createdAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"updatedAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"avgRating\": null,\n                    \"reviewsCount\": 0\n                },\n                {\n                    \"id\": 727,\n                    \"name\": \"White Harlow Jean\",\n                    \"images\": [\n                        \"https://storage.googleapis.com/img-product-amoure/727_0.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/727_1.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/727_2.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/727_3.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/727_4.jpg\"\n                    ],\n                    \"description\": \"White cotton (100% Cotton). Jeans & Denim. Front zipper fly with button closure. 30\\\" inseam. 11.5\\\" rise. Imported.\",\n                    \"stylishNotes\": \"These wide-leg, white trousers from Madewell offer a relaxed yet chic vibe, perfect for versatile styling. Pair with a fitted top to balance the silhouette or a casual tee for an effortless weekend look.\",\n                    \"retailPrice\": \"770000\",\n                    \"rentPrice\": \"150000\",\n                    \"size\": \"S\",\n                    \"categoryId\": 7,\n                    \"color\": \"FREE\",\n                    \"status\": \"AVAILABLE\",\n                    \"ownerId\": 24,\n                    \"createdAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"updatedAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"avgRating\": null,\n                    \"reviewsCount\": 0\n                },\n                {\n                    \"id\": 730,\n                    \"name\": \"Avery Wide Leg Ankle Jeans\",\n                    \"images\": [\n                        \"https://storage.googleapis.com/img-product-amoure/730_0.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/730_1.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/730_2.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/730_3.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/730_4.jpg\"\n                    ],\n                    \"description\": \"Off-white (63% Cotton, 35% Lyocell, 2% Elastane). Jeans & Denim. Front zipper fly with button closure. 28\\\" inseam. 11.5\\\" rise. Imported.\",\n                    \"stylishNotes\": \"These wide-leg, off-white jeans from Joe's Jeans offer a relaxed yet chic vibe. Pair them with a crisp button-down and loafers for a polished casual look, or add a soft knit vest for layered texture.\",\n                    \"retailPrice\": \"1490000\",\n                    \"rentPrice\": \"300000\",\n                    \"size\": \"S\",\n                    \"categoryId\": 7,\n                    \"color\": \"FREE\",\n                    \"status\": \"AVAILABLE\",\n                    \"ownerId\": 20,\n                    \"createdAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"updatedAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"avgRating\": null,\n                    \"reviewsCount\": 0\n                },\n                {\n                    \"id\": 808,\n                    \"name\": \"Nyomi Romper\",\n                    \"images\": [\n                        \"https://storage.googleapis.com/img-product-amoure/808_0.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/808_1.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/808_2.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/808_3.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/808_4.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/808_5.jpg\"\n                    ],\n                    \"description\": \"White Cotton. (100% Cotton). Romper. Collared. Sleeveless. Front button closure. 33\\\" from shoulder to hemline. 3\\\" Inseam. Imported.\",\n                    \"stylishNotes\": \"Embrace the chic simplicity of this white Ramy Brook romper. Its clean lines and crisp white hue make it the perfect versatile piece for all your adventures.This style may require additional, at-home steaming.\",\n                    \"retailPrice\": \"2250000\",\n                    \"rentPrice\": \"450000\",\n                    \"size\": \"XL\",\n                    \"categoryId\": 8,\n                    \"color\": \"FREE\",\n                    \"status\": \"AVAILABLE\",\n                    \"ownerId\": 198,\n                    \"createdAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"updatedAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"avgRating\": null,\n                    \"reviewsCount\": 0\n                },\n                {\n                    \"id\": 811,\n                    \"name\": \"Perla Jumpsuit\",\n                    \"images\": [\n                        \"https://storage.googleapis.com/img-product-amoure/811_0.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/811_1.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/811_2.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/811_3.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/811_4.jpg\"\n                    ],\n                    \"description\": \"White (Main 85% Viscose, 15% Linen. Lining 100% Viscose). Jumpsuit. Sleeveless. Collared. Front button closure. See size & fit notes for length and measurements. 30\\\" inseam. 13\\\" rise. 8\\\" leg opening. Imported.\",\n                    \"stylishNotes\": \"This sleeveless, wide-leg jumpsuit by Reiss radiates effortless sophistication with its clean lines and waist-cinching tie belt. The neutral palette offers versatile styling, perfect with strappy heels and statement earrings for a polished look.\",\n                    \"retailPrice\": \"1920000\",\n                    \"rentPrice\": \"380000\",\n                    \"size\": \"XL\",\n                    \"categoryId\": 8,\n                    \"color\": \"FREE\",\n                    \"status\": \"AVAILABLE\",\n                    \"ownerId\": 78,\n                    \"createdAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"updatedAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"avgRating\": null,\n                    \"reviewsCount\": 0\n                },\n                {\n                    \"id\": 820,\n                    \"name\": \"Sydney Beach Off-White Jumpsuit\",\n                    \"images\": [\n                        \"https://storage.googleapis.com/img-product-amoure/820_0.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/820_1.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/820_2.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/820_3.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/820_4.jpg\"\n                    ],\n                    \"description\": \"Off-white (54% Hemp, 44% TENCEL™ Lyocell, 2% Spandex). Jumpsuit. Sleeveless. Scoop neck. Front button closure. 22\\\" from shoulder to hemline. 23\\\" inseam. 14\\\" rise. 11\\\" leg opening. Imported.\",\n                    \"stylishNotes\": \"This Marine Layer jumpsuit evokes casual, laid-back vibes with its sleeveless design and button front. Perfect for a relaxed weekend look, pair it with sandals and a tote bag for effortless style.This style may require additional, at-home steaming.\",\n                    \"retailPrice\": \"770000\",\n                    \"rentPrice\": \"150000\",\n                    \"size\": \"XL\",\n                    \"categoryId\": 8,\n                    \"color\": \"FREE\",\n                    \"status\": \"AVAILABLE\",\n                    \"ownerId\": 65,\n                    \"createdAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"updatedAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"avgRating\": null,\n                    \"reviewsCount\": 0\n                },\n                {\n                    \"id\": 825,\n                    \"name\": \"Combinaison Hills Romper\",\n                    \"images\": [\n                        \"https://storage.googleapis.com/img-product-amoure/825_0.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/825_1.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/825_2.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/825_3.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/825_4.jpg\"\n                    ],\n                    \"description\": \"White denim (100% Cotton). Romper. Short sleeves. Collar. Front zipper closure. 34\\\" from shoulder to hemline. 5\\\" inseam. Imported.\",\n                    \"stylishNotes\": \"This fresh tie-waist take on the denim romper by A.P.C. is about to be your new summer staple. Pair this white playsuit with anything from sneakers to strappy heels, depending on your vibe.\",\n                    \"retailPrice\": \"2580000\",\n                    \"rentPrice\": \"520000\",\n                    \"size\": \"S\",\n                    \"categoryId\": 8,\n                    \"color\": \"FREE\",\n                    \"status\": \"AVAILABLE\",\n                    \"ownerId\": 4,\n                    \"createdAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"updatedAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"avgRating\": null,\n                    \"reviewsCount\": 0\n                },\n                {\n                    \"id\": 836,\n                    \"name\": \"Beige Belted Romper\",\n                    \"images\": [\n                        \"https://storage.googleapis.com/img-product-amoure/836_0.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/836_1.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/836_2.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/836_3.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/836_4.jpg\"\n                    ],\n                    \"description\": \"Brown linen blend (87% Viscose, 7% Linen, 8% Cotton). Romper. Short sleeves. V-neck. Pull on. 30.5\\\" from shoulder to hemline. Made in the USA of imported fabric.\",\n                    \"stylishNotes\": \"A sleek circular belt cinches this minimalist linen romper by Louna for a summer look that's always chic.This style may require additional, at-home steaming.\",\n                    \"retailPrice\": \"1470000\",\n                    \"rentPrice\": \"290000\",\n                    \"size\": \"S\",\n                    \"categoryId\": 8,\n                    \"color\": \"FREE\",\n                    \"status\": \"AVAILABLE\",\n                    \"ownerId\": 101,\n                    \"createdAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"updatedAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"avgRating\": null,\n                    \"reviewsCount\": 0\n                },\n                {\n                    \"id\": 837,\n                    \"name\": \"Vinny Playsuit\",\n                    \"images\": [\n                        \"https://storage.googleapis.com/img-product-amoure/837_0.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/837_1.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/837_2.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/837_3.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/837_4.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/837_5.jpg\"\n                    ],\n                    \"description\": \"Off-white polyester blend (65% Polyester, 35% Cotton; Combo: 47% Cotton, 47% Modal, 6% Elastane). Romper. Short sleeves. V-neck. Front button closure. 31\\\" from shoulder to hemline. 3\\\" inseam. Imported.\",\n                    \"stylishNotes\": \"Flirty and fun, this puff sleeve romper by Ulla Johnson has whimsical summer vibes.\",\n                    \"retailPrice\": \"2340000\",\n                    \"rentPrice\": \"470000\",\n                    \"size\": \"S\",\n                    \"categoryId\": 8,\n                    \"color\": \"FREE\",\n                    \"status\": \"AVAILABLE\",\n                    \"ownerId\": 70,\n                    \"createdAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"updatedAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"avgRating\": null,\n                    \"reviewsCount\": 0\n                },\n                {\n                    \"id\": 892,\n                    \"name\": \"Elliot Maternity Romper\",\n                    \"images\": [\n                        \"https://storage.googleapis.com/img-product-amoure/892_0.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/892_1.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/892_2.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/892_3.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/892_4.jpg\"\n                    ],\n                    \"description\": \"White tencel (80% Tencel, 20% Linen). Romper. V-neck. Sleeveless. Front button closure. 34\\\" from shoulder to hemline. 3\\\" inseam. Made in the USA of imported fabric. Country of origin designation as provided by vendor and/or manufacturer.\",\n                    \"stylishNotes\": \"Nursing-friendly buttons and a tie belt seal the deal on this summer-essential HATCH romper that's casual and cute.Style with theSogno Bucket Totefrom Poolside.\",\n                    \"retailPrice\": \"1310000\",\n                    \"rentPrice\": \"260000\",\n                    \"size\": \"M\",\n                    \"categoryId\": 9,\n                    \"color\": \"FREE\",\n                    \"status\": \"AVAILABLE\",\n                    \"ownerId\": 201,\n                    \"createdAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"updatedAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"avgRating\": null,\n                    \"reviewsCount\": 0\n                },\n                {\n                    \"id\": 930,\n                    \"name\": \"Wide Leg Pants\",\n                    \"images\": [\n                        \"https://storage.googleapis.com/img-product-amoure/930_0.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/930_1.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/930_2.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/930_3.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/930_4.jpg\"\n                    ],\n                    \"description\": \"Off-white cotton blend (70% Cotton, 30% Polyester). Pants. Front zipper fly with button closure. 23\\\" inseam. 14.5\\\" rise. Imported.\",\n                    \"stylishNotes\": \"These wide-leg culottes by 3.1 Phillip Lim x RTR offer a relaxed yet sophisticated vibe with their clean lines and neutral hue. Pair with a fitted top and statement sandals for an effortlessly chic look.\",\n                    \"retailPrice\": \"2550000\",\n                    \"rentPrice\": \"510000\",\n                    \"size\": \"M\",\n                    \"categoryId\": 10,\n                    \"color\": \"FREE\",\n                    \"status\": \"AVAILABLE\",\n                    \"ownerId\": 62,\n                    \"createdAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"updatedAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"avgRating\": null,\n                    \"reviewsCount\": 0\n                },\n                {\n                    \"id\": 938,\n                    \"name\": \"Luisa Pants\",\n                    \"images\": [\n                        \"https://storage.googleapis.com/img-product-amoure/938_0.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/938_1.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/938_2.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/938_3.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/938_4.jpg\"\n                    ],\n                    \"description\": \"White cotton (100% Cotton). Pants. Front zipper fly with button closure. See size and fit notes for length measurements 13\\\" rise. Imported.\",\n                    \"stylishNotes\": \"These crisp cotton trousers by STAUD are here to give you those vacation vibes even at your desk.\",\n                    \"retailPrice\": \"1650000\",\n                    \"rentPrice\": \"330000\",\n                    \"size\": \"M\",\n                    \"categoryId\": 10,\n                    \"color\": \"FREE\",\n                    \"status\": \"AVAILABLE\",\n                    \"ownerId\": 64,\n                    \"createdAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"updatedAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"avgRating\": null,\n                    \"reviewsCount\": 0\n                }\n            ]\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Search by Query",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/ml/search?query=red dress",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"ml",
+								"search"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "red dress"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/ml/search?query=red dress",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"ml",
+										"search"
+									],
+									"query": [
+										{
+											"key": "query",
+											"value": "red dress"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "https://editor.swagger.io"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4e42-zQdjAaKZlPK9xhE6n2QgfZ8fibM\""
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Jun 2024 17:48:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"OK\",\n    \"data\": {\n        \"products\": {\n            \"count\": 20,\n            \"products\": [\n                {\n                    \"id\": 195,\n                    \"name\": \"Rib Tube Top\",\n                    \"images\": [\n                        \"https://storage.googleapis.com/img-product-amoure/195_0.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/195_1.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/195_2.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/195_3.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/195_4.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/195_5.jpg\"\n                    ],\n                    \"description\": \"Red knit (47.5% Cotton, 47.5% Modal, 5% Spandex). Top. Sleeveless. Strapless. Pull-on closure. 11.5\\\" from shoulder to hemline. Made in the USA.\",\n                    \"stylishNotes\": \"This vibrant red strapless top by DONNI has a relaxed yet chic vibe. It's versatile enough to be styled casually with jeans or dressed up with a high-waisted skirt. Pair with bold accessories to complement its striking hue and minimalist design.\",\n                    \"retailPrice\": \"590000\",\n                    \"rentPrice\": \"120000\",\n                    \"size\": \"L\",\n                    \"categoryId\": 3,\n                    \"color\": \"FREE\",\n                    \"status\": \"AVAILABLE\",\n                    \"ownerId\": 72,\n                    \"createdAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"updatedAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"avgRating\": null,\n                    \"reviewsCount\": 0\n                },\n                {\n                    \"id\": 212,\n                    \"name\": \"Naomi Top\",\n                    \"images\": [\n                        \"https://storage.googleapis.com/img-product-amoure/212_0.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/212_1.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/212_2.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/212_3.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/212_4.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/212_5.jpg\"\n                    ],\n                    \"description\": \"Red floral (100% Cotton). Top. Short sleeves. Split neck. Pull-on closure. 23\\\" from shoulder to hemline. Imported.\",\n                    \"stylishNotes\": \"This vibrant Ulla Johnson blouse features a bold floral print with puff sleeves, adding a playful and feminine touch. Pair it with neutral-toned bottoms, like a beige skirt, to let the top's colors stand out.\",\n                    \"retailPrice\": \"1620000\",\n                    \"rentPrice\": \"320000\",\n                    \"size\": \"L\",\n                    \"categoryId\": 3,\n                    \"color\": \"FREE\",\n                    \"status\": \"AVAILABLE\",\n                    \"ownerId\": 70,\n                    \"createdAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"updatedAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"avgRating\": null,\n                    \"reviewsCount\": 0\n                },\n                {\n                    \"id\": 298,\n                    \"name\": \"Summer Sunrise Top\",\n                    \"images\": [\n                        \"https://storage.googleapis.com/img-product-amoure/298_0.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/298_1.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/298_2.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/298_3.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/298_4.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/298_5.jpg\"\n                    ],\n                    \"description\": \"Red printed cotton (100% Cotton). Top. Short sleeves. V-neck. Pull on. 22\\\" from shoulder to hemline. Imported.\",\n                    \"stylishNotes\": \"Style this relaxed peasant-style top by FARM Rio with a flowy skirt for the ultimate vacation vibe.\",\n                    \"retailPrice\": \"900000\",\n                    \"rentPrice\": \"180000\",\n                    \"size\": \"S\",\n                    \"categoryId\": 3,\n                    \"color\": \"FREE\",\n                    \"status\": \"AVAILABLE\",\n                    \"ownerId\": 90,\n                    \"createdAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"updatedAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"avgRating\": null,\n                    \"reviewsCount\": 0\n                },\n                {\n                    \"id\": 365,\n                    \"name\": \"Floral Mini Dress\",\n                    \"images\": [\n                        \"https://storage.googleapis.com/img-product-amoure/365_0.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/365_1.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/365_2.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/365_3.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/365_4.jpg\"\n                    ],\n                    \"description\": \"Pink Linen (100% Linen) Casual dress. V-neck. Long Sleeves. Side zipper closure. 35\\\" from shoulder to hemline. Imported.\",\n                    \"stylishNotes\": \"This floral mini dress by Peter Som Collective offers a feminine charm with its delicate floral print and flattering silhouette. Perfect for your next daytime event, this dress effortlessly combines elegance with a hint of whimsy.\",\n                    \"retailPrice\": \"2790000\",\n                    \"rentPrice\": \"560000\",\n                    \"size\": \"M\",\n                    \"categoryId\": 5,\n                    \"color\": \"FREE\",\n                    \"status\": \"AVAILABLE\",\n                    \"ownerId\": 30,\n                    \"createdAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"updatedAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"avgRating\": null,\n                    \"reviewsCount\": 0\n                },\n                {\n                    \"id\": 385,\n                    \"name\": \"Red Polo Midi Dress\",\n                    \"images\": [\n                        \"https://storage.googleapis.com/img-product-amoure/385_0.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/385_1.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/385_2.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/385_3.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/385_4.jpg\"\n                    ],\n                    \"description\": \"Red (Main material, Tab, Pocket, Rib, Collar: 84% Viscose, 16% Polyester). Casual dresses. Short sleeves. Collared neckline. Pull-on closure. 50\\\" from shoulder to hemline. Imported.\",\n                    \"stylishNotes\": \"This Maje knit dress features a playful, sporty vibe with its polo collar and vibrant red hue. The textured pattern adds a touch of elegance. Pair with casual sneakers for a relaxed look or dress it up with heels and statement jewelry.\",\n                    \"retailPrice\": \"2660000\",\n                    \"rentPrice\": \"530000\",\n                    \"size\": \"M\",\n                    \"categoryId\": 5,\n                    \"color\": \"FREE\",\n                    \"status\": \"AVAILABLE\",\n                    \"ownerId\": 25,\n                    \"createdAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"updatedAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"avgRating\": null,\n                    \"reviewsCount\": 0\n                },\n                {\n                    \"id\": 395,\n                    \"name\": \"Red Empire Mini Dress\",\n                    \"images\": [\n                        \"https://storage.googleapis.com/img-product-amoure/395_0.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/395_1.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/395_2.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/395_3.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/395_4.jpg\"\n                    ],\n                    \"description\": \"Red (97% Cotton, 3% Spandex). Casual Dress. Sweetheart neck. Short sleeve. Back zipper closure. 34\\\" from shoulder to hemline. Imported.\",\n                    \"stylishNotes\": \"Immerse yourself in the allure of this charming red empire mini dress, seamlessly blending comfort and style. Whether paired with strappy sandals for a leisurely brunch or elevated with statement jewelry and heels for a night out, this imported beauty offers timeless elegance with a contemporary twist. Flaunt your flair for fashion with this quintessential wardrobe staple.\",\n                    \"retailPrice\": \"2160000\",\n                    \"rentPrice\": \"430000\",\n                    \"size\": \"M\",\n                    \"categoryId\": 5,\n                    \"color\": \"FREE\",\n                    \"status\": \"AVAILABLE\",\n                    \"ownerId\": 30,\n                    \"createdAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"updatedAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"avgRating\": null,\n                    \"reviewsCount\": 0\n                },\n                {\n                    \"id\": 398,\n                    \"name\": \"Felicia Dress\",\n                    \"images\": [\n                        \"https://storage.googleapis.com/img-product-amoure/398_0.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/398_1.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/398_2.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/398_3.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/398_4.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/398_5.jpg\"\n                    ],\n                    \"description\": \"Red (54% Polyester, 39% Viscose, 7% Elastane) Cocktail dress. Sleeveless. Sweetheart neckline. Back zipper closure. 33\\\" from shoulder to hemline. Imported.\",\n                    \"stylishNotes\": \"A vibrant orange mini dress by Cinq à Sept, featuring a structured bodice and playful tie straps. Pair with minimalist heels and statement earrings for a chic, eye-catching ensemble.\",\n                    \"retailPrice\": \"2550000\",\n                    \"rentPrice\": \"510000\",\n                    \"size\": \"M\",\n                    \"categoryId\": 5,\n                    \"color\": \"FREE\",\n                    \"status\": \"AVAILABLE\",\n                    \"ownerId\": 12,\n                    \"createdAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"updatedAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"avgRating\": null,\n                    \"reviewsCount\": 0\n                },\n                {\n                    \"id\": 423,\n                    \"name\": \"Lila Dress\",\n                    \"images\": [\n                        \"https://storage.googleapis.com/img-product-amoure/423_0.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/423_1.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/423_2.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/423_3.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/423_4.jpg\"\n                    ],\n                    \"description\": \"Yellow floral (55% Linen, 45% Rayon). Casual dress. Sleeveless. V-neck. Back zipper closure. 53\\\" from shoulder to hemline. Imported.\",\n                    \"stylishNotes\": \"This YUMI KIM dress features a vibrant floral print with a tiered skirt and delicate straps, creating a cheerful and bohemian charm. Accentuate its playful elegance with simple sandals and minimal jewelry.\",\n                    \"retailPrice\": \"1490000\",\n                    \"rentPrice\": \"300000\",\n                    \"size\": \"M\",\n                    \"categoryId\": 5,\n                    \"color\": \"FREE\",\n                    \"status\": \"AVAILABLE\",\n                    \"ownerId\": 50,\n                    \"createdAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"updatedAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"avgRating\": null,\n                    \"reviewsCount\": 0\n                },\n                {\n                    \"id\": 429,\n                    \"name\": \"Tie Waist Strapless Dress\",\n                    \"images\": [\n                        \"https://storage.googleapis.com/img-product-amoure/429_0.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/429_1.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/429_2.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/429_3.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/429_4.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/429_5.jpg\"\n                    ],\n                    \"description\": \"Red (100% cotton poplin). Casual dress. Sleeveless. Sweetheart neckline. Side zipper closure. 42\\\" from bust to hemline. Imported.\",\n                    \"stylishNotes\": \"This vibrant red strapless midi dress by TOCCIN X RTR radiates elegance and charm with its sweetheart neckline and flowing skirt. Accentuate the romantic vibe with delicate gold jewelry and strappy heels.\",\n                    \"retailPrice\": \"3570000\",\n                    \"rentPrice\": \"540000\",\n                    \"size\": \"M\",\n                    \"categoryId\": 5,\n                    \"color\": \"FREE\",\n                    \"status\": \"AVAILABLE\",\n                    \"ownerId\": 79,\n                    \"createdAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"updatedAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"avgRating\": null,\n                    \"reviewsCount\": 0\n                },\n                {\n                    \"id\": 478,\n                    \"name\": \"V-Neck Printed Maxi Dress\",\n                    \"images\": [\n                        \"https://storage.googleapis.com/img-product-amoure/478_0.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/478_1.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/478_2.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/478_3.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/478_4.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/478_5.jpg\"\n                    ],\n                    \"description\": \"Red floral (100% Polyester Chiffon). Cocktail dress. Long sleeves. V-neck. Back zipper closure. 56\\\" from shoulder to hemline. Imported.\",\n                    \"stylishNotes\": \"This vibrant TOCCIN X RTR maxi dress features a bold red and orange leaf print, perfect for making a statement at any summer event. Pair with simple sandals and minimal jewelry to let the dress shine.\",\n                    \"retailPrice\": \"3270000\",\n                    \"rentPrice\": \"490000\",\n                    \"size\": \"XL\",\n                    \"categoryId\": 5,\n                    \"color\": \"FREE\",\n                    \"status\": \"AVAILABLE\",\n                    \"ownerId\": 79,\n                    \"createdAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"updatedAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"avgRating\": null,\n                    \"reviewsCount\": 0\n                },\n                {\n                    \"id\": 512,\n                    \"name\": \"Pia Floral Dress\",\n                    \"images\": [\n                        \"https://storage.googleapis.com/img-product-amoure/512_0.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/512_1.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/512_2.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/512_3.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/512_4.jpg\"\n                    ],\n                    \"description\": \"Multicolored floral (100% Organic Cotton). Casual dresses. Short sleeves. Crew neck. Back zipper closure. 33.5\\\" from shoulder to hemline. Imported.\",\n                    \"stylishNotes\": \"This vibrant, patterned mini dress by RHODE features voluminous puff sleeves and a playful ruffle detail, achieving a cheerful and bold aesthetic. Pair it with simple heels and statement earrings to let the dress take center stage.\",\n                    \"retailPrice\": \"2670000\",\n                    \"rentPrice\": \"530000\",\n                    \"size\": \"XL\",\n                    \"categoryId\": 5,\n                    \"color\": \"FREE\",\n                    \"status\": \"AVAILABLE\",\n                    \"ownerId\": 37,\n                    \"createdAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"updatedAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"avgRating\": null,\n                    \"reviewsCount\": 0\n                },\n                {\n                    \"id\": 516,\n                    \"name\": \"Midi Ruched Tiered Dress\",\n                    \"images\": [\n                        \"https://storage.googleapis.com/img-product-amoure/516_0.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/516_1.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/516_2.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/516_3.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/516_4.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/516_5.jpg\"\n                    ],\n                    \"description\": \"Red (100%Cotton). Casual dress. Scoop neck. Sleeveless. Back zipper closure. 52\\\" from shoulder to hemline. Imported.\",\n                    \"stylishNotes\": \"This sleeveless midi dress by Eudon Choi Collective features a vibrant red hue and a ruched, tiered silhouette, adding a voluminous and flowy appearance. Pair with a clutch and strappy gold heels to complete the look.\",\n                    \"retailPrice\": \"2310000\",\n                    \"rentPrice\": \"460000\",\n                    \"size\": \"XL\",\n                    \"categoryId\": 5,\n                    \"color\": \"FREE\",\n                    \"status\": \"AVAILABLE\",\n                    \"ownerId\": 40,\n                    \"createdAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"updatedAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"avgRating\": null,\n                    \"reviewsCount\": 0\n                },\n                {\n                    \"id\": 581,\n                    \"name\": \"Pom Pom Floral Lawn Dress\",\n                    \"images\": [\n                        \"https://storage.googleapis.com/img-product-amoure/581_0.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/581_1.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/581_2.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/581_3.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/581_4.jpg\"\n                    ],\n                    \"description\": \"Multicolored polka dot (99% Cotton, 1% Elastane). Casual dress. Short sleeves. Back button closure. 49.5\\\" from shoulder to hemline. Imported.\",\n                    \"stylishNotes\": \"This kate spade new york dress features a playful black and white daisy print with a flattering waist tie and tiered skirt. Its breezy, feminine vibe is perfect for a spring day. Pair with simple sandals and a pop of color accessory like a bright clutch.\",\n                    \"retailPrice\": \"2270000\",\n                    \"rentPrice\": \"450000\",\n                    \"size\": \"M\",\n                    \"categoryId\": 5,\n                    \"color\": \"FREE\",\n                    \"status\": \"AVAILABLE\",\n                    \"ownerId\": 149,\n                    \"createdAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"updatedAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"avgRating\": null,\n                    \"reviewsCount\": 0\n                },\n                {\n                    \"id\": 607,\n                    \"name\": \"Fleur-F Silk Dress\",\n                    \"images\": [\n                        \"https://storage.googleapis.com/img-product-amoure/607_0.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/607_1.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/607_2.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/607_3.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/607_4.jpg\"\n                    ],\n                    \"description\": \"Red (Outer: 100% Silk, Lining: 96% Polyester, 4% Spandex). Cocktail dress. Sleeveless. Collared. Back zipper closure. 57\\\" from shoulder to hemline. Imported.\",\n                    \"stylishNotes\": \"This elegant red lace SALONI dress radiates sophistication with a sleeveless high-neck design and a subtle waist cinch. The open back adds a touch of allure. Pair with strappy heels and a clutch for a polished look.\",\n                    \"retailPrice\": \"5100000\",\n                    \"rentPrice\": \"760000\",\n                    \"size\": \"M\",\n                    \"categoryId\": 5,\n                    \"color\": \"FREE\",\n                    \"status\": \"AVAILABLE\",\n                    \"ownerId\": 140,\n                    \"createdAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"updatedAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"avgRating\": null,\n                    \"reviewsCount\": 0\n                },\n                {\n                    \"id\": 620,\n                    \"name\": \"Abito Dress\",\n                    \"images\": [\n                        \"https://storage.googleapis.com/img-product-amoure/620_0.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/620_1.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/620_2.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/620_3.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/620_4.jpg\"\n                    ],\n                    \"description\": \"Green floral (100% PA). Casual dress. Sleeveless. Crew neck. Pull-on closure. 51.5\\\" from shoulder to hemline. Imported.\",\n                    \"stylishNotes\": \"This Fuzzi dress features a vibrant floral and butterfly print on a green background, offering a fresh and lively summer look. Pair it with simple red sandals to complement the bold colors.\",\n                    \"retailPrice\": \"3900000\",\n                    \"rentPrice\": \"580000\",\n                    \"size\": \"M\",\n                    \"categoryId\": 5,\n                    \"color\": \"FREE\",\n                    \"status\": \"AVAILABLE\",\n                    \"ownerId\": 174,\n                    \"createdAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"updatedAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"avgRating\": null,\n                    \"reviewsCount\": 0\n                },\n                {\n                    \"id\": 629,\n                    \"name\": \"Barbara Dress\",\n                    \"images\": [\n                        \"https://storage.googleapis.com/img-product-amoure/629_0.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/629_1.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/629_2.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/629_3.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/629_4.jpg\"\n                    ],\n                    \"description\": \"Red abstract crepe (100% Viscose). A-line. Sleeveless. Scoop neck. Pull on. 44\\\" from shoulder to hemline. Imported.\",\n                    \"stylishNotes\": \"Give Italian main character vibes in this tie-neckline midi dress by Ciao Lucia. Pair with a straw clutch and white cat-eye sunnies to traipse through the vineyards in Tuscany\",\n                    \"retailPrice\": \"2310000\",\n                    \"rentPrice\": \"460000\",\n                    \"size\": \"M\",\n                    \"categoryId\": 5,\n                    \"color\": \"FREE\",\n                    \"status\": \"AVAILABLE\",\n                    \"ownerId\": 107,\n                    \"createdAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"updatedAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"avgRating\": null,\n                    \"reviewsCount\": 0\n                },\n                {\n                    \"id\": 673,\n                    \"name\": \"Ridge Drop Waist Gown\",\n                    \"images\": [\n                        \"https://storage.googleapis.com/img-product-amoure/673_0.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/673_1.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/673_2.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/673_3.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/673_4.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/673_5.jpg\"\n                    ],\n                    \"description\": \"Orange (100% Polyester). Gown. Scoop neck. Back zipper closure. 58\\\" from shoulder to hemline. Imported.\",\n                    \"stylishNotes\": \"This vibrant orange maxi dress by Hutch features a fitted bodice and a flowing skirt, with a playful yet elegant charm. Accentuate its simplicity with minimalist jewelry and strappy heels for a chic, summery look.\",\n                    \"retailPrice\": \"1910000\",\n                    \"rentPrice\": \"380000\",\n                    \"size\": \"L\",\n                    \"categoryId\": 6,\n                    \"color\": \"FREE\",\n                    \"status\": \"AVAILABLE\",\n                    \"ownerId\": 158,\n                    \"createdAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"updatedAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"avgRating\": null,\n                    \"reviewsCount\": 0\n                },\n                {\n                    \"id\": 680,\n                    \"name\": \"Suniva Dress\",\n                    \"images\": [\n                        \"https://storage.googleapis.com/img-product-amoure/680_0.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/680_1.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/680_2.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/680_3.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/680_4.jpg\"\n                    ],\n                    \"description\": \"Multicolored floral (100% Silk). Gown. Sleeveless. V-neck. Pull-on closure. 58\\\" from shoulder to hemline. Imported.\",\n                    \"stylishNotes\": \"This LoveShackFancy dress offers a romantic, vintage-inspired charm with its floral print and soft silhouette. Enhance the feminine allure with delicate gold jewelry and pastel heels.\",\n                    \"retailPrice\": \"3570000\",\n                    \"rentPrice\": \"540000\",\n                    \"size\": \"L\",\n                    \"categoryId\": 6,\n                    \"color\": \"FREE\",\n                    \"status\": \"AVAILABLE\",\n                    \"ownerId\": 123,\n                    \"createdAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"updatedAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"avgRating\": null,\n                    \"reviewsCount\": 0\n                },\n                {\n                    \"id\": 704,\n                    \"name\": \"Camellia Dress\",\n                    \"images\": [\n                        \"https://storage.googleapis.com/img-product-amoure/704_0.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/704_1.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/704_2.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/704_3.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/704_4.jpg\"\n                    ],\n                    \"description\": \"Red gown (Ground 100% Polyester, Embroidery 100% Cotton). V-neck. Back zipper closure. See size & fit notes for length and measurements. Imported.\",\n                    \"stylishNotes\": \"This vibrant red tiered maxi dress by Sabina Musayev gives off a romantic and bohemian flair. Accentuate its deep V-neckline with delicate jewelry. Pair with strappy sandals for a chic summer evening look.\",\n                    \"retailPrice\": \"4350000\",\n                    \"rentPrice\": \"650000\",\n                    \"size\": \"L\",\n                    \"categoryId\": 6,\n                    \"color\": \"FREE\",\n                    \"status\": \"AVAILABLE\",\n                    \"ownerId\": 176,\n                    \"createdAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"updatedAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"avgRating\": null,\n                    \"reviewsCount\": 0\n                },\n                {\n                    \"id\": 715,\n                    \"name\": \"Nalina Dress\",\n                    \"images\": [\n                        \"https://storage.googleapis.com/img-product-amoure/715_0.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/715_1.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/715_2.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/715_3.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/715_4.jpg\",\n                        \"https://storage.googleapis.com/img-product-amoure/715_5.jpg\"\n                    ],\n                    \"description\": \"Red floral georgette (100% Polyester). Ball. Sleeveless. Square neck. Back zipper closure. See Size & Fit Notes for length measurement. Imported.\",\n                    \"stylishNotes\": \"Sashay into your next event in this fabulous floral strapless gown by Hutch. The tiered skirt practically floats on air as you take the dance floor.\",\n                    \"retailPrice\": \"2360000\",\n                    \"rentPrice\": \"470000\",\n                    \"size\": \"L\",\n                    \"categoryId\": 6,\n                    \"color\": \"FREE\",\n                    \"status\": \"AVAILABLE\",\n                    \"ownerId\": 158,\n                    \"createdAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"updatedAt\": \"2024-06-18T18:02:00.000Z\",\n                    \"avgRating\": null,\n                    \"reviewsCount\": 0\n                }\n            ]\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "NGROK",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"url\": \"https://f387-35-221-218-184.ngrok-free.app\",\r\n    \"type\": \"DEFAULT\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/ml/ngrok",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"ml",
+								"ngrok"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "NGROK",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}

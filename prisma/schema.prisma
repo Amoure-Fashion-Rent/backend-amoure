@@ -1,0 +1,164 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  USER
+  OWNER
+}
+
+enum ProductStatus {
+  AVAILABLE
+  ON_RENT
+  ON_RETURN
+}
+
+enum OrderStatus {
+  PENDING
+  CONFIRMED
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+}
+
+enum NgrokType {
+  VTON
+  DEFAULT
+}
+
+model User {
+  id            Int       @id @default(autoincrement())
+  fullName      String    @map("full_name")
+  email         String
+  password      String
+  role          Role
+  addressDetail String?
+  province      String?
+  district      String?
+  postalCode    String?
+  phoneNumber   String?
+  birthDate     DateTime? @db.Timestamptz()
+  createdAt     DateTime  @default(now()) @map("created_at") @db.Timestamptz()
+  updatedAt     DateTime  @updatedAt @map("updated_at") @db.Timestamptz()
+
+  products  Product[]
+  reviews   Review[]
+  orders    Order[]
+  token     UserToken?
+  wishlists Wishlist[]
+
+  @@map("users")
+}
+
+model UserToken {
+  userId Int    @id @map("user_id")
+  token  String
+  user   User   @relation(fields: [userId], references: [id])
+
+  @@map("user_tokens")
+}
+
+model Product {
+  id           Int           @id @default(autoincrement())
+  name         String
+  images       String[]
+  description  String
+  stylishNotes String
+  retailPrice  Decimal       @map("retail_price")
+  rentPrice    Decimal       @map("rent_price")
+  size         String
+  categoryId   Int           @map("category_id")
+  color        String
+  status       ProductStatus @default(AVAILABLE)
+  ownerId      Int           @map("owner_id")
+  createdAt    DateTime      @default(now()) @map("created_at") @db.Timestamptz()
+  updatedAt    DateTime      @updatedAt @map("updated_at") @db.Timestamptz()
+  similarItems Int[]         @default([]) @map("similar_items")
+
+  owner     User       @relation(fields: [ownerId], references: [id])
+  category  Category   @relation(fields: [categoryId], references: [id])
+  reviews   Review[]
+  orders    Order[]
+  wishlists Wishlist[]
+
+  @@map("products")
+}
+
+model Category {
+  id       Int       @id @default(autoincrement())
+  name     String
+  products Product[]
+
+  @@map("categories")
+}
+
+model Review {
+  id        Int      @id @default(autoincrement())
+  rating    Int
+  comment   String
+  userId    Int      @map("user_id")
+  productId Int      @map("product_id")
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz()
+
+  product Product @relation(fields: [productId], references: [id])
+  user    User    @relation(fields: [userId], references: [id])
+
+  @@map("reviews")
+}
+
+model Wishlist {
+  productId Int
+  userId    Int
+
+  product Product @relation(fields: [productId], references: [id])
+  user    User    @relation(fields: [userId], references: [id])
+
+  @@id([productId, userId])
+  @@map("wishlists")
+}
+
+model carts {
+  id        Int @id @default(autoincrement())
+  userId    Int @map("user_id")
+  productId Int @map("product_id")
+
+  @@map("carts")
+}
+
+model Order {
+  id              Int         @id @default(autoincrement())
+  userId          Int         @map("user_id")
+  productId       Int         @map("product_id")
+  // denorm in case referenced product is edited
+  productName     String      @map("product_name")
+  productSize     String      @map("size")
+  productColor    String      @map("color")
+  rentPrice       Decimal     @map("rent_price")
+  deliveryMethod  String      @map("delivery_method")
+  deliveryPrice   Decimal     @map("delivery_price")
+  totalPrice      Decimal     @map("total_price")
+  rentalStartDate DateTime    @map("rental_start_date")
+  rentalEndDate   DateTime    @map("rental_end_date")
+  rentalDuration  Int         @map("rental_duration") // in days
+  status          OrderStatus
+  createdAt       DateTime    @default(now()) @map("created_at") @db.Timestamptz()
+  updatedAt       DateTime    @updatedAt @map("updated_at") @db.Timestamptz()
+
+  product Product @relation(fields: [productId], references: [id])
+  user    User    @relation(fields: [userId], references: [id])
+
+  @@map("orders")
+}
+
+model NgrokUrl {
+  id   Int       @id @default(autoincrement())
+  name String
+  type NgrokType @default(DEFAULT)
+
+  @@map("ngrok_urls")
+}

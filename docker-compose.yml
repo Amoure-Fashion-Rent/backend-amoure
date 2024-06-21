@@ -1,0 +1,34 @@
+version: "3"
+
+services:
+  amoure-be-db:
+    image: postgres:13.4
+    restart: always
+    hostname: amoure-db
+    networks:
+      - amoure-be
+    healthcheck:
+      test: pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}
+      interval: 10s
+      timeout: 3s
+      retries: 5
+    env_file: .env
+    ports:
+      - "8001:5432"
+  amoure-api:
+    build: .
+    hostname: amoure-be
+    container_name: amoure-be
+    restart: unless-stopped
+    env_file:
+      - .env
+    networks:
+      - amoure-be
+    ports:
+      - "8080:8080"
+    depends_on:
+      amoure-be-db:
+        condition: service_healthy
+
+networks:
+  amoure-be:

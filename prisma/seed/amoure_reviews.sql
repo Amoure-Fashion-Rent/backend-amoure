@@ -1,0 +1,22 @@
+INSERT INTO "reviews" ("rating","comment","user_id","product_id","created_at")
+VALUES
+(4,'Sangat suka dengan outfit ini! Potongannya pas dan membuat saya merasa percaya diri',214,1,'6/18/2024 19:36'),
+(5,'Terpesona dengan keindahan desainnya yang unik dan elegan, membuat saya tampil lebih percaya diri.',215,2,'6/18/2024 19:36'),
+(5,'Bahannya terasa begitu lembut dan nyaman di kulit, seperti pelukan hangat di hari yang dingin.',216,3,'6/18/2024 19:36'),
+(5,'Potongan yang sempurna mengikuti lekuk tubuh dengan indah, menonjolkan sisi terbaik saya',217,4,'6/18/2024 19:36'),
+(5,'Kualitasnya luar biasa, teruji tahan lama dan tidak mudah rusak, menjadikannya investasi yang berharga.',218,5,'6/18/2024 19:36'),
+(5,'Detail yang rumit dan presisi mencerminkan dedikasi dan kecanggihan pengrajinnya, menghasilkan karya seni yang tak tertandingi.',219,6,'6/18/2024 19:36'),
+(4,'Warna yang memukau dan cerah memancarkan energi positif dan keceriaan, mencerminkan kepribadian saya yang penuh warna.',220,7,'6/18/2024 19:36'),
+(4,'Gaya yang serbaguna memungkinkan saya untuk memadukannya dengan berbagai outfit, cocok untuk berbagai acara dan suasana.',221,8,'6/18/2024 19:36'),
+(4,'Aksesoris yang sempurna untuk melengkapi penampilan, menambahkan sentuhan akhir yang istimewa dan personal.',222,9,'6/18/2024 19:36'),
+(5,'Memberikan rasa percaya diri dan meningkatkan mood, membuat saya merasa seperti versi terbaik dari diri saya sendiri.',223,10,'6/18/2024 19:36'),
+(5,'Menjadi favorit baru di lemari pakaian saya, selalu menjadi pilihan pertama saat ingin tampil memukau.',224,11,'6/18/2024 19:36'),
+(5,'Pengiriman yang cepat dan tepat waktu, produk tiba dalam kondisi sempurna tanpa kerusakan.',225,12,'6/18/2024 19:36'),
+(4,'Kemasan yang indah dan rapi, menunjukkan perhatian terhadap detail dan rasa hormat kepada pelanggan.',226,13,'6/18/2024 19:36'),
+(4,'Produk ini melebihi ekspektasi saya, memberikan nilai yang luar biasa dengan harga yang terjangkau.',227,14,'6/18/2024 19:36'),
+(5,'Menjadi rekomendasi utama bagi teman dan keluarga, karena kualitas dan keunggulannya yang tak terbantahkan.',228,15,'6/18/2024 19:36'),
+(5,'Brand yang selalu menghadirkan inovasi dan desain yang segar, selalu mengikuti tren terbaru tanpa kehilangan identitasnya.',229,16,'6/18/2024 19:36'),
+(5,'Kemasan yang indah dan rapi, menunjukkan perhatian terhadap detail dan rasa hormat kepada pelanggan.',230,17,'6/18/2024 19:36'),
+(4,'Kemasan yang indah dan rapi, menunjukkan perhatian terhadap detail dan rasa hormat kepada pelanggan.',231,18,'6/18/2024 19:36'),
+(4,'Menjadi rekomendasi utama bagi teman dan keluarga, karena kualitas dan keunggulannya yang tak terbantahkan.',232,19,'6/18/2024 19:36'),
+(5,'Kemasan yang indah dan rapi, menunjukkan perhatian terhadap detail dan rasa hormat kepada pelanggan.',233,20,'6/18/2024 19:36');
